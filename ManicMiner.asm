@@ -1,6 +1,6 @@
 ;-----------------------------------------------------------------;
 ;                                                                 ;
-;(C) 1983,1984,1999,2000 Matthew Smith - all rights reserved.     ;
+; (C) 1983,1984,1999,2000 Matthew Smith - all rights reserved.    ;
 ;                                                                 ;
 ; A Disassembly of Manic Miner for the ZX Spectrum.               ;
 ;                                                                 ;
