@@ -7,7 +7,7 @@ It is a disassembly created by William Humphreys of an original binary with a lo
 
 It has been created specifically to be assembled with the:
 
-Zeus Z80 Assembler / Disassembler / Emulator developed by Simon Brattal.  
+Zeus Z80 Assembler / Disassembler / Emulator developed by Simon Brattel.  
 
 Zeus Download Link: http://www.desdes.com/products/oldfiles/index.htm
                                                                  
