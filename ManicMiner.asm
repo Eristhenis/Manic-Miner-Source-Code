@@ -325,10 +325,10 @@ GameClock                         DEFB 0
 ;                                                                                                   ;
 ; --------------------------------------------------------------------------------------------------;
 
-HorizontalGuardian1               DEFS 7                                   ; Horizontal guardian 1.
-HorizontalGuardian2               DEFS 7                                   ; Horizontal guardian 2.
-HorizontalGuardian3               DEFS 7                                   ; Horizontal guardian 3.
-HorizontalGuardian4               DEFS 7                                   ; Horizontal guardian 4.
+HorizontalGuardian1               DEFS 7                                   ; Horizontal Guardian 1.
+HorizontalGuardian2               DEFS 7                                   ; Horizontal Guardian 2.
+HorizontalGuardian3               DEFS 7                                   ; Horizontal Guardian 3.
+HorizontalGuardian4               DEFS 7                                   ; Horizontal Guardian 4.
 HorizontalGuardianTerm            DEFB 0                                   ; Terminator (set to 255).
 
 ;-------------------------------------------------------------------------------------------------------------------------------------------;
@@ -352,7 +352,7 @@ EugDirOrKongBeastStatus           DEFB 0
 
 ;-------------------------------------------------------------------------------------------------------------------------------------------;
 
-; ---------------------------------------------------------------------------------------------------------------;
+;---------------------------------------------------------------------------------------------------------------;
 ;                                                                                                               ;
 ; Various Uses.                                                                                                 ;
 ;                                                                                                               ;
@@ -362,7 +362,7 @@ EugDirOrKongBeastStatus           DEFB 0
 ; Used to hold Eugene's pixel y-coordinate.                                                                     ;
 ; Used to hold the Kong Beast's pixel y-coordinate.                                                             ;
 ;                                                                                                               ;
-; ---------------------------------------------------------------------------------------------------------------;
+;---------------------------------------------------------------------------------------------------------------;
 
 MultiUseCoordinateStore           DEFB 0
 
@@ -393,12 +393,12 @@ MultiUseCoordinateStore           DEFB 0
 ; The exception is Eugene's Lair: the routine that copies the graphic data for the Eugene sprite into the last 32 bytes of this
 ; area, where it is then used by a different routine.
 
-VerticalGuardian1                 DEFS 7                                   ; Vertical guardian 1.
-VerticalGuardian2                 DEFS 7                                   ; Vertical guardian 2.
-VerticalGuardian3                 DEFS 7                                   ; Vertical guardian 3.
-VerticalGuardian4                 DEFS 7                                   ; Vertical guardian 4.
+VerticalGuardian1                 DEFS 7                                   ; Vertical Guardian 1.
+VerticalGuardian2                 DEFS 7                                   ; Vertical Guardian 2.
+VerticalGuardian3                 DEFS 7                                   ; Vertical Guardian 3.
+VerticalGuardian4                 DEFS 7                                   ; Vertical Guardian 4.
 VerticalGuardianTerm              DEFB 0                                   ; Terminator (set to 255 in caverns that have four
-                                                                           ; vertical guardians).
+                                                                           ; Vertical Guardians).
 VerticalGuardianSpare             DEFS 6                                   ; Spare.
 
 ;-------------------------------------------------------------------------------------------------------------------------------------------;
@@ -415,141 +415,141 @@ AppFirst                          equ *                                    ; We 
 ;                                                                ;
 ;----------------------------------------------------------------;
 
-WillySpriteData                   dg -----##---------
-                                  dg --#####---------
-                                  dg -#####----------
-                                  dg --##-#----------
-                                  dg --#####---------
-                                  dg --####----------
-                                  dg ---##-----------
-                                  dg --####----------
-                                  dg -######---------
-                                  dg -######---------
-                                  dg ####-###--------
-                                  dg #####-##--------
-                                  dg --####----------
-                                  dg -###-##---------
-                                  dg -##-###---------
-                                  dg -###-###--------
+WillySpriteData                   DG -----##---------
+                                  DG --#####---------
+                                  DG -#####----------
+                                  DG --##-#----------
+                                  DG --#####---------
+                                  DG --####----------
+                                  DG ---##-----------
+                                  DG --####----------
+                                  DG -######---------
+                                  DG -######---------
+                                  DG ####-###--------
+                                  DG #####-##--------
+                                  DG --####----------
+                                  DG -###-##---------
+                                  DG -##-###---------
+                                  DG -###-###--------
 
-                                  dg -------##-------
-                                  dg ----#####-------
-                                  dg ---#####--------
-                                  dg ----##-#--------
-                                  dg ----#####-------
-                                  dg ----####--------
-                                  dg -----##---------
-                                  dg ----####--------
-                                  dg ---##-###-------
-                                  dg ---##-###-------
-                                  dg ---##-###-------
-                                  dg ---###-##-------
-                                  dg ----####--------
-                                  dg -----##---------
-                                  dg -----##---------
-                                  dg -----###--------
+                                  DG -------##-------
+                                  DG ----#####-------
+                                  DG ---#####--------
+                                  DG ----##-#--------
+                                  DG ----#####-------
+                                  DG ----####--------
+                                  DG -----##---------
+                                  DG ----####--------
+                                  DG ---##-###-------
+                                  DG ---##-###-------
+                                  DG ---##-###-------
+                                  DG ---###-##-------
+                                  DG ----####--------
+                                  DG -----##---------
+                                  DG -----##---------
+                                  DG -----###--------
 
-WillySpriteData1                  dg ---------##-----
-                                  dg ------#####-----
-                                  dg -----#####------
-                                  dg ------##-#------
-                                  dg ------#####-----
-                                  dg ------####------
-                                  dg -------##-------
-                                  dg ------####------
-                                  dg -----######-----
-                                  dg -----######-----
-                                  dg ----####-###----
-                                  dg ----#####-##----
-                                  dg ------####------
-                                  dg -----###-##-----
-                                  dg -----##-###-----
-                                  dg -----###-###----
+WillySpriteData1                  DG ---------##-----
+                                  DG ------#####-----
+                                  DG -----#####------
+                                  DG ------##-#------
+                                  DG ------#####-----
+                                  DG ------####------
+                                  DG -------##-------
+                                  DG ------####------
+                                  DG -----######-----
+                                  DG -----######-----
+                                  DG ----####-###----
+                                  DG ----#####-##----
+                                  DG ------####------
+                                  DG -----###-##-----
+                                  DG -----##-###-----
+                                  DG -----###-###----
 
-WillySpriteData2                  dg -----------##---
-                                  dg --------#####---
-                                  dg -------#####----
-                                  dg --------##-#----
-                                  dg --------#####---
-                                  dg --------####----
-                                  dg ---------##-----
-                                  dg --------####----
-                                  dg -------######---
-                                  dg ------########--
-                                  dg -----##########-
-                                  dg -----##-####-##-
-                                  dg --------#####---
-                                  dg -------###-##-#-
-                                  dg ------##----###-
-                                  dg ------###----#--
+WillySpriteData2                  DG -----------##---
+                                  DG --------#####---
+                                  DG -------#####----
+                                  DG --------##-#----
+                                  DG --------#####---
+                                  DG --------####----
+                                  DG ---------##-----
+                                  DG --------####----
+                                  DG -------######---
+                                  DG ------########--
+                                  DG -----##########-
+                                  DG -----##-####-##-
+                                  DG --------#####---
+                                  DG -------###-##-#-
+                                  DG ------##----###-
+                                  DG ------###----#--
 
-                                  dg ---##-----------
-                                  dg ---#####--------
-                                  dg ----#####-------
-                                  dg ----#-##--------
-                                  dg ---#####--------
-                                  dg ----####--------
-                                  dg -----##---------
-                                  dg ----####--------
-                                  dg ---######-------
-                                  dg --########------
-                                  dg -##########-----
-                                  dg -##-####-##-----
-                                  dg ---#####--------
-                                  dg -#-##-###-------
-                                  dg -###----##------
-                                  dg --#----###------
+                                  DG ---##-----------
+                                  DG ---#####--------
+                                  DG ----#####-------
+                                  DG ----#-##--------
+                                  DG ---#####--------
+                                  DG ----####--------
+                                  DG -----##---------
+                                  DG ----####--------
+                                  DG ---######-------
+                                  DG --########------
+                                  DG -##########-----
+                                  DG -##-####-##-----
+                                  DG ---#####--------
+                                  DG -#-##-###-------
+                                  DG -###----##------
+                                  DG --#----###------
 
-                                  dg -----##---------
-                                  dg -----#####------
-                                  dg ------#####-----
-                                  dg ------#-##------
-                                  dg -----#####------
-                                  dg ------####------
-                                  dg -------##-------
-                                  dg ------####------
-                                  dg -----######-----
-                                  dg -----######-----
-                                  dg ----###-####----
-                                  dg ----##-#####----
-                                  dg ------####------
-                                  dg -----##-###-----
-                                  dg -----###-##-----
-                                  dg ----###-###-----
+                                  DG -----##---------
+                                  DG -----#####------
+                                  DG ------#####-----
+                                  DG ------#-##------
+                                  DG -----#####------
+                                  DG ------####------
+                                  DG -------##-------
+                                  DG ------####------
+                                  DG -----######-----
+                                  DG -----######-----
+                                  DG ----###-####----
+                                  DG ----##-#####----
+                                  DG ------####------
+                                  DG -----##-###-----
+                                  DG -----###-##-----
+                                  DG ----###-###-----
 
-                                  dg -------##-------
-                                  dg -------#####----
-                                  dg --------#####---
-                                  dg --------#-##----
-                                  dg -------#####----
-                                  dg --------####----
-                                  dg ---------##-----
-                                  dg --------####----
-                                  dg -------######---
-                                  dg -------###-##---
-                                  dg -------###-##---
-                                  dg -------##-###---
-                                  dg --------####----
-                                  dg ---------##-----
-                                  dg ---------##-----
-                                  dg --------###-----
+                                  DG -------##-------
+                                  DG -------#####----
+                                  DG --------#####---
+                                  DG --------#-##----
+                                  DG -------#####----
+                                  DG --------####----
+                                  DG ---------##-----
+                                  DG --------####----
+                                  DG -------######---
+                                  DG -------###-##---
+                                  DG -------###-##---
+                                  DG -------##-###---
+                                  DG --------####----
+                                  DG ---------##-----
+                                  DG ---------##-----
+                                  DG --------###-----
 
-                                  dg ---------##-----
-                                  dg ---------#####--
-                                  dg ----------#####-
-                                  dg ----------#-##--
-                                  dg ---------#####--
-                                  dg ----------####--
-                                  dg -----------##---
-                                  dg ----------####--
-                                  dg ---------######-
-                                  dg ---------######-
-                                  dg --------###-####
-                                  dg --------##-#####
-                                  dg ----------####--
-                                  dg ---------##-###-
-                                  dg ---------###-##-
-                                  dg --------###-###-
+                                  DG ---------##-----
+                                  DG ---------#####--
+                                  DG ----------#####-
+                                  DG ----------#-##--
+                                  DG ---------#####--
+                                  DG ----------####--
+                                  DG -----------##---
+                                  DG ----------####--
+                                  DG ---------######-
+                                  DG ---------######-
+                                  DG --------###-####
+                                  DG --------##-#####
+                                  DG ----------####--
+                                  DG ---------##-###-
+                                  DG ---------###-##-
+                                  DG --------###-###-
 
 ;-------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -595,10 +595,10 @@ CurrentCavernNumber               DEFB 0                                   ; Cur
 ; Left-right movement table.                                     ;
 ;                                                                ;
 ; The entries in this table are used to map the existing value   ;
-; (V) of Willy's direction and movement flags at 32874 to a new  ;
-; value (V'), depending on the direction Willy is facing and     ;
-; how he is moving or being moved (by 'left' and 'right'         ;
-; keypresses and joystick input, or by a conveyor).              ;
+; (V) of Willy's direction and movement flags to a new value     ;
+; (V'), depending on the direction Willy is facing and how he is ;
+; moving or being moved (by 'left' and 'right' keypresses and    ;
+; joystick input, or by a conveyor).                             ;
 ;                                                                ;
 ;----------------------------------------------------------------;
 
@@ -1010,7 +1010,7 @@ Start8                            LD H,A                                   ; Pre
 
 MainLoop                          LD A,(LivesRemaining)                    ; Pick up the number of lives remaining.
                                   LD HL,20640                              ; Set HL to the display file address at which to draw the first
-                                  ; Willy sprite.
+                                                                           ; Willy sprite.
                                   OR A                                     ; Are there any lives remaining?
                                   JR Z,MainLoop3                           ; Jump if not.
                                   LD B,A                                   ; Initialise B to the number of lives remaining.
@@ -1151,22 +1151,22 @@ MainLoop8                         LD B,(high zeuskeyaddr("ASDFG")) xor $FF ; Rea
 
 ; Here we check whether Willy has had a fatal accident.
 
-MainLoop9                         LD A,(AirborneStatusIndicator)           ; Pick up the airborne status indicator
+MainLoop9                         LD A,(AirborneStatusIndicator)           ; Pick up the airborne status indicator.
                                   CP $FF                                   ; Has Willy landed after falling from too great a height, or
                                                                            ; collided with a nasty or a guardian?
                                   JP Z,MainLoop19                          ; Jump if so.
 
 ; Now read the keys H, J, K, L and ENTER (which toggle the in-game music).
 
-                                  LD B,high zeuskeyaddr("HJKL[ENTER]")     ; Prepare B for reading keys H-J-K-L-ENTER
-                                  LD HL,MusicFlags                         ; Point HL at the music flags
-                                  IN A,(C)                                 ; Read keys H-J-K-L-ENTER
+                                  LD B,high zeuskeyaddr("HJKL[ENTER]")     ; Prepare B for reading keys H-J-K-L-ENTER.
+                                  LD HL,MusicFlags                         ; Point HL at the music flags.
+                                  IN A,(C)                                 ; Read keys H-J-K-L-ENTER.
                                   AND $1F                                  ; Are any of these keys being pressed?
                                   CP $1F
-                                  JR Z,MainLoop10                          ; Jump if not
+                                  JR Z,MainLoop10                          ; Jump if not.
                                   BIT 0,(HL)                               ; Were any of these keys being pressed the last time we checked?
-                                  JR NZ,MainLoop11                         ; Jump if so
-                                  LD A,(HL)                                ; Set bit 0 (the keypress flag) and flip bit 1
+                                  JR NZ,MainLoop11                         ; Jump if so.
+                                  LD A,(HL)                                ; Set bit 0 (the keypress flag) and flip bit 1.
                                   XOR 3                                    ; (the in-game music flag).
                                   LD (HL),A
                                   JR MainLoop11
@@ -1390,11 +1390,11 @@ DisplayGameOver5                  LD A,(MultiUseCoordinateStore)           ; Pic
                                   LD A,(BC)
                                   SUB 32
                                   LD H,A
-                                  LD DE,47840                              ; Draw the boot (see 47840) at this location, without erasing
-                                  LD C,0                                   ; the boot at the previous location; this leaves the portion
-                                  CALL DrawASprite                         ; of the boot sprite that's above the ankle in place,and makes
-                                                                           ; the boot appear as if it's at the end of a long, extending
-                                                                           ; trouser leg.
+                                  LD DE,TheMenagerieData+736               ; Draw the boot at this location, without erasing the boot at    
+                                  LD C,0                                   ; the previous location; this leaves the portion of the boot 
+                                  CALL DrawASprite                         ; sprite that's above the ankle in place,and makes the boot 
+                                                                           ; appear as if it's at the end of a long, extending trouser 
+                                                                           ; leg.
                                   LD A,(MultiUseCoordinateStore)           ; Pick up the distance variable from MultiUseCoordinateStore
                                   CPL                                      ; A=255-A
                                   LD E,A                                   ; Store this value (63-255) in E; it determines the (rising)
@@ -1620,7 +1620,7 @@ MoveWilly1                        LD A,(AirborneStatusIndicator)           ; Pic
                                   CP (HL)                                  ; Is the top-right cell of Willy's sprite overlapping a wall
                                                                            ; tile?
                                   JP Z,MW1x11                              ; Jump if so.
-                                  LD A,(JumpingAnimationCounter)           ; Increment the jumping animation counter at 32878
+                                  LD A,(JumpingAnimationCounter)           ; Increment the jumping animation counter.
                                   INC A
                                   LD (JumpingAnimationCounter),A
                                   SUB 8                                    ; A = J - 8, where J (1-18) is the new value of the jumping
@@ -1825,7 +1825,7 @@ AnimateCrumblingFloor2            DEC B                                   ; Coll
 ;         below Willy's sprite                                   ;
 ;----------------------------------------------------------------;
 
-MoveWilly2                        LD A,(32875)                             ; Pick up the airborne status indicator.
+MoveWilly2                        LD A,(AirborneStatusIndicator)           ; Pick up the airborne status indicator.
                                   CP 12                                    ; Has Willy just landed after falling from too great a height?
                                   JP NC,KillWilly1                         ; If so, kill him.
                                   LD E,$FF                                 ; Initialise E to $FF (all bits set); it will be used to hold.
@@ -2142,10 +2142,10 @@ MoveDrawLightBeam                 LD HL,23575                              ; Poi
 
 ; The beam-drawing loop begins here.
 
-MoveDrawLightBeam2                LD A,(32809)                             ; Pick up the attribute byte of the floor tile for the cavern.
+MoveDrawLightBeam2                LD A,(FloorTile)                         ; Pick up the attribute byte of the floor tile for the cavern.
                                   CP (HL)                                  ; Does HL point at a floor tile?
                                   RET Z                                    ; Return if so (the light beam stops here).
-                                  LD A,(32827)                             ; Pick up the attribute byte of the wall tile for the cavern.
+                                  LD A,(WallTile)                          ; Pick up the attribute byte of the wall tile for the cavern.
                                   CP (HL)                                  ; Does HL point at a wall tile?
                                   RET Z                                    ; Return if so (the light beam stops here).
                                   LD A,39                                  ; A=39 (INK 7: PAPER 4).
@@ -2158,7 +2158,7 @@ MoveDrawLightBeam2                LD A,(32809)                             ; Pic
                                   CALL DecreaseAirRemaining
                                   EXX                                      ; Switch back to the normal registers (restoring DE and HL).
                                   JR MoveDrawLightBeam4                    ; Jump forward to draw the light beam over Willy.
-MoveDrawLightBeam3                LD A,(32800)                             ; Pick up the attribute byte of the background tile for the
+MoveDrawLightBeam3                LD A,(BackgroundTile)                    ; Pick up the attribute byte of the background tile for the
                                                                            ; cavern.
                                   CP (HL)                                  ; does HL point at a background tile?
                                   JR Z,MoveDrawLightBeam4                  ; Jump if so.
@@ -2417,7 +2417,7 @@ MoveDrawSkyLabs4                  LD E,(IY+2)                              ; Pic
 ;                                                                ;
 ;----------------------------------------------------------------;
 
-MoveDrawVerticalGuardians         LD IY,32989                             ; Point IY at the first byte of the first vertical guardian
+MoveDrawVerticalGuardians         LD IY,VerticalGuardian1                 ; Point IY at the first byte of the first vertical guardian
                                                                           ; definition.
 
 ; The guardian-moving loop begins here.
@@ -2815,11 +2815,11 @@ AddToTheScore                     LD (HL),48                               ; Rol
                                   INC A
                                   LD (LivesRemaining),A
 
-; HL points at the digit of the score (see 33833) to be incremented.
+; HL points at the digit of the score to be incremented.
 
 AddToTheScore1                    LD A,(HL)                                ; Pick up a digit of the score.
                                   CP 57                                    ; Is it '9'?
-                                  JR Z,37098                               ; Jump if so.
+                                  JR Z,AddToTheScore                       ; Jump if so.
                                   INC (HL)                                 ; Increment the digit.
                                   RET
 
@@ -2913,7 +2913,7 @@ MoveDrawKongBeast3                LD A,(HL)                                ; Pic
                                   LD (24465),A
                                   LD A,114                                 ; Update the seventh byte of the guardian definition so that
                                                                            ; the guardian moves through the opening in the wall.
-                                  LD (32971),A
+                                  LD (HorizontalGuardian2+6),A
                                   JR MoveDrawKongBeast5
 
 MoveDrawKongBeast4                LD (HL),0                                ; Clear a pixel row of the wall tile at (11,17) in the screen
@@ -2986,7 +2986,7 @@ MoveDrawKongBeast8                OUT (254),A                              ; Mak
                                   LD E,A
                                   LD C,0                                   ; Draw the Kong Beast to the screen buffer at 24576.
                                   CALL DrawASprite
-                                  LD HL,33836                              ; Add 100 to the score.
+                                  LD HL,Score2+6                           ; Add 100 to the score.
                                   CALL AddToTheScore1
                                   LD A,(MultiUseCoordinateStore)           ; Pick up the Kong Beast's pixel y-coordinate.
                                   AND 120                                  ; Point HL at the address of the Kong Beast's location in the
@@ -4503,7 +4503,7 @@ TheMenagerieData                  DH "0D0000000000000000004300000000000000030000
 
                                   DEFB 128                                 ; Game clock.
 
-; The next 28 bytes are copied to 32958 and define the horizontal guardians.
+; The next 28 bytes define the horizontal guardians.
 
                                   DEFB 68                                  ; Horizontal guardian 1:
                                   DEFW 23987                               ; y = 13, initial x = 19, 1 <= x <= 19, speed = normal.
@@ -4837,7 +4837,7 @@ AbandonedUraniumWorkingsData equ *
 
                         DEFB 2                          ; Border colour
 
-; The next byte is copied to 32884, but is not used.
+; The next byte is copied but is not used.
 
                         DEFB 0                          ; Unused
 
@@ -5218,7 +5218,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
 
                         DEFB 1                          ; Border colour.
 
-; The next byte is copied to 32884, but is not used.
+; The next byte is copied but is not used.
 
                         DEFB 0                          ; Unused.
 
@@ -9506,29 +9506,32 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         dg ----------------
                         dg ----------------
 
+;------------------------------------------------------------------------------------------------------------------------------------------;                        
+                        
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; The Sixteenth Cavern (teleport: 12346)                         ;
 ;                                                                ;
 ;----------------------------------------------------------------;
-; Cavern attributes
 
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6542000000004200000000650000650000000000000042424200000000000065"
-                        dh "6500000000000000000000650000656500000000000000000000000000000065"
-                        dh "6500000042000000000000650000656565000000000000000042424242424265"
-                        dh "6500000000000000000000650000656565650000000000000000000000000065"
-                        dh "6502024646464646464646464646464646464646464646464646460000000065"
-                        dh "6500000000000000000000000000000000000000000000000000000000000065"
-                        dh "6500000000000000000065654242000000000000000000000000420000000065"
-                        dh "6542424242424242424200000000000000000000000000000000000000000065"
-                        dh "6500000000000000000000000000000000000000420000000000420000000065"
-                        dh "6500000000000000000000000000000000000000000000040404000000000065"
-                        dh "6542424242424242424242424242424242424242424242424242424242424265"
+; The first 512 bytes are the attributes that define the layout of the cavern.
+
+TheSixteenthCavernData            DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6542000000004200000000650000650000000000000042424200000000000065"
+                                  DH "6500000000000000000000650000656500000000000000000000000000000065"
+                                  DH "6500000042000000000000650000656565000000000000000042424242424265"
+                                  DH "6500000000000000000000650000656565650000000000000000000000000065"
+                                  DH "6502024646464646464646464646464646464646464646464646460000000065"
+                                  DH "6500000000000000000000000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000065654242000000000000000000000000420000000065"
+                                  DH "6542424242424242424200000000000000000000000000000000000000000065"
+                                  DH "6500000000000000000000000000000000000000420000000000420000000065"
+                                  DH "6500000000000000000000000000000000000000000000040404000000000065"
+                                  DH "6542424242424242424242424242424242424242424242424242424242424265"
 
 ; Cavern name
 
@@ -9907,33 +9910,38 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         dg -------#-#-#----
                         dg ------#--#--#---
 
+;------------------------------------------------------------------------------------------------------------------------------------------;
+                        
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; The Warehouse (teleport: 56)                                   ;
 ;                                                                ;
 ;----------------------------------------------------------------;
-; Cavern attributes
 
-                        dh "1600000000000000000000000000000000000000000000000000000000161616"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000600000600000006000006000000000006000600000000000016"
-                        dh "1604044444444444444400004444444444444400004444440044440000040416"
-                        dh "1644442144444444444400004444444444444400004444444444440000444416"
-                        dh "1644444444444444444400004444440044444400004444444444210000444416"
-                        dh "1644440000444444444400004444202020202000004444444444440000444416"
-                        dh "1600440000444444444400004444444444444400004444444444440000444416"
-                        dh "1644440000444444444400004444444444444400444421444444440000444416"
-                        dh "1644440000444444442100004444444444444444444444444444000000444416"
-                        dh "1644440000444444444400004444444444444444444444444444440000444416"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000404040416"
-                        dh "1604040404040404040404040404040404040404040404040404040404040416"
+; The first 512 bytes are the attributes that define the layout of the cavern.
 
-; Cavern name
+TheWarehouseData                  DH "1600000000000000000000000000000000000000000000000000000000161616"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000600000600000006000006000000000006000600000000000016"
+                                  DH "1604044444444444444400004444444444444400004444440044440000040416"
+                                  DH "1644442144444444444400004444444444444400004444444444440000444416"
+                                  DH "1644444444444444444400004444440044444400004444444444210000444416"
+                                  DH "1644440000444444444400004444202020202000004444444444440000444416"
+                                  DH "1600440000444444444400004444444444444400004444444444440000444416"
+                                  DH "1644440000444444444400004444444444444400444421444444440000444416"
+                                  DH "1644440000444444442100004444444444444444444444444444000000444416"
+                                  DH "1644440000444444444400004444444444444444444444444444440000444416"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000404040416"
+                                  DH "1604040404040404040404040404040404040404040404040404040404040416"
 
-                        db "         The Warehouse          "
+; The next 32 bytes specify the cavern name.
+
+                                  DB "         The Warehouse          "    ; Cavern name
+                                  
+; The next 72 bytes contain the attributes and graphic data for the tiles used to build the cavern.                                  
 
 ; Background
                         db $00
@@ -10308,33 +10316,36 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         dg ----##--------##
                         dg --------------##
 
+;------------------------------------------------------------------------------------------------------------------------------------------;                        
+                        
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; Amoebatrons' Revenge (teleport: 156)                           ;
 ;                                                                ;
 ;----------------------------------------------------------------;
-; Cavern attributes
 
-                        dh "1600000000000000000000000000000000000000000000000000000016000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600004242000042424200004242424242424242000042424200004242424216"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1642420000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000004242424242424242000042424200004242000016"
-                        dh "1600004242000042424200000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000424216"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "1600004242000042424200004242424242424242000042424200004242000016"
-                        dh "1642420000000000000000000000000000000000000000000000000000000016"
-                        dh "1600000000000000000000000000000000000000000000000000000000000016"
-                        dh "4242424242424242424242424242424242424242424242424242424242424242"
+; The first 512 bytes are the attributes that define the layout of the cavern.
 
-; Cavern name
+AmoebatronsRevengeData            DH "1600000000000000000000000000000000000000000000000000000016000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600004242000042424200004242424242424242000042424200004242424216"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1642420000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000004242424242424242000042424200004242000016"
+                                  DH "1600004242000042424200000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000424216"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600004242000042424200004242424242424242000042424200004242000016"
+                                  DH "1642420000000000000000000000000000000000000000000000000000000016"
+                                  DH "1600000000000000000000000000000000000000000000000000000000000016"
+                                  DH "4242424242424242424242424242424242424242424242424242424242424242"
 
-                        db "      Amoebatrons' Revenge      "
+; The next 32 bytes specify the cavern name.
+                                  
+                                  DB "      Amoebatrons' Revenge      "    ; Cavern name.
 
 ; Background
                         db $00
