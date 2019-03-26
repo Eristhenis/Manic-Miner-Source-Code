@@ -36,7 +36,7 @@
 ;                                                                 ;
 ; Created     : 22 September 2018                                 ;
 ;                                                                 ;
-; Last Update : 22 September 2018                                 ;
+; Last Update : 26 March 2019                                     ;
 ;                                                                 ;
 ;-----------------------------------------------------------------;
 
@@ -1390,10 +1390,10 @@ DisplayGameOver5                  LD A,(MultiUseCoordinateStore)           ; Pic
                                   LD A,(BC)
                                   SUB 32
                                   LD H,A
-                                  LD DE,TheMenagerieData+736               ; Draw the boot at this location, without erasing the boot at    
-                                  LD C,0                                   ; the previous location; this leaves the portion of the boot 
-                                  CALL DrawASprite                         ; sprite that's above the ankle in place,and makes the boot 
-                                                                           ; appear as if it's at the end of a long, extending trouser 
+                                  LD DE,TheMenagerieData+736               ; Draw the boot at this location, without erasing the boot at
+                                  LD C,0                                   ; the previous location; this leaves the portion of the boot
+                                  CALL DrawASprite                         ; sprite that's above the ankle in place,and makes the boot
+                                                                           ; appear as if it's at the end of a long, extending trouser
                                                                            ; leg.
                                   LD A,(MultiUseCoordinateStore)           ; Pick up the distance variable from MultiUseCoordinateStore
                                   CPL                                      ; A=255-A
@@ -4705,8 +4705,6 @@ BootGraphicData                   DG --#-#-#-##------
 
 ; The first 512 bytes are the attributes that define the layout of the cavern.
 
-                                  EQU *
-
 AbandonedUraniumWorkingsData      DH "2900000000000005000000000000292929292929292929292929292929292929"
                                   DH "2900000000000000000000000000000000000000000000000000000000000029"
                                   DH "2900000000000000000000000000000000000000000000000000000000000029"
@@ -4739,7 +4737,7 @@ AbandonedUraniumWorkingsData      DH "290000000000000500000000000029292929292929
                                   DG --------
                                   DG --------
                                   DG --------
-                   
+
                                   DB $46                                   ; Attribute.
                                   DG ########                              ; Floor.
                                   DG ########
@@ -4772,34 +4770,34 @@ AbandonedUraniumWorkingsData      DH "290000000000000500000000000029292929292929
 
                                   DB $03                                   ; Attribute.
                                   DG ####----                              ; Conveyor.
-                                  DG -##--##-                              
-                                  DG ####----                              
-                                  DG -##--##-                              
-                                  DG --------                              
-                                  DG #--##--#                              
-                                  DG ########                              
-                                  DG --------                              
-                                                                           
+                                  DG -##--##-
+                                  DG ####----
+                                  DG -##--##-
+                                  DG --------
+                                  DG #--##--#
+                                  DG ########
+                                  DG --------
+
                                   DB $04                                   ; Attribute.
                                   DG -#---#--                              ; Nasty 1 (unused).
-                                  DG --#-#---                              
-                                  DG #--#-#--                              
-                                  DG -#-#---#                              
-                                  DG --##-#-#                              
-                                  DG ##-#-##-                              
-                                  DG -#-##---                              
-                                  DG ---#----                              
-                                                                           
+                                  DG --#-#---
+                                  DG #--#-#--
+                                  DG -#-#---#
+                                  DG --##-#-#
+                                  DG ##-#-##-
+                                  DG -#-##---
+                                  DG ---#----
+
                                   DB $05                                   ; Attribute.
                                   DG ---#----                              ; Nasty 2.
-                                  DG ---#----                              
-                                  DG ---#----                              
-                                  DG -#-#-#--                              
-                                  DG --###---                              
-                                  DG ##-#-##-                              
-                                  DG --###---                              
-                                  DG -#-#-#--                              
-                                                                           
+                                  DG ---#----
+                                  DG ---#----
+                                  DG -#-#-#--
+                                  DG --###---
+                                  DG ##-#-##-
+                                  DG --###---
+                                  DG -#-#-#--
+
                                   DB $00                                   ; Attribute.
                                   DG --------                              ; Extra (unused).
                                   DG --------
@@ -4836,29 +4834,29 @@ AbandonedUraniumWorkingsData      DH "290000000000000500000000000029292929292929
 ; The next 25 bytes specify the location and initial colour of the items in the cavern.
 
                                   DEFB 3                                   ; Item 1 at (0,1).
-                                  DEFW 23553                               
-                                  DEFB 96                                  
-                                  DEFB 255                                 
+                                  DEFW 23553
+                                  DEFB 96
+                                  DEFB 255
                                   DEFB 4                                   ; Item 2 at (1,12).
-                                  DEFW 23596                               
-                                  DEFB 96                                  
-                                  DEFB 255                                 
+                                  DEFW 23596
+                                  DEFB 96
+                                  DEFB 255
                                   DEFB 5                                   ; Item 3 at (1,25).
-                                  DEFW 23609                               
-                                  DEFB 96                                  
-                                  DEFB 255                                 
+                                  DEFW 23609
+                                  DEFB 96
+                                  DEFB 255
                                   DEFB 6                                   ; Item 4 at (6,16).
-                                  DEFW 23760                               
-                                  DEFB 96                                  
-                                  DEFB 255                                 
+                                  DEFW 23760
+                                  DEFB 96
+                                  DEFB 255
                                   DEFB 3                                   ; Item 5 at (6,30).
-                                  DEFW 23774                               
-                                  DEFB 96                                  
-                                  DEFB 255                                 
+                                  DEFW 23774
+                                  DEFB 96
+                                  DEFB 255
                                   DEFB 255                                 ; Terminator.
 
-The next 37 bytes define the portal graphic and its location.                                  
-                                  
+; The next 37 bytes define the portal graphic and its location.
+
                                   DB $0E                                   ; Attribute.
                                   DG --#---#---#---#-                      ; Portal Graphic Data.
                                   DG ---#---#---#---#
@@ -4880,7 +4878,7 @@ The next 37 bytes define the portal graphic and its location.
                                   DW $5C3D                                 ; Location in the attribute buffer at 23552: (1,29).
                                   DW $603D                                 ; Location in the screen buffer at 24576: (1,29).
 
-The next eight bytes define the item graphic.                                  
+; The next eight bytes define the item graphic.
 
                                   DG --##----                              ; Item graphic data.
                                   DG -#--#---
@@ -4901,18 +4899,18 @@ The next eight bytes define the item graphic.
 
 ; The next 28 bytes define the horizontal guardians.
 
-                                  DEFB 66                                  ; Horizontal Guardian 1: 
+                                  DEFB 66                                  ; Horizontal Guardian 1:
                                   DEFW 23969                               ; y = 13, initial x = 1, 1 <= x <= 10, speed = normal.
-                                  DEFB 104                                 ;
-                                  DEFB 0                                   ;
-                                  DEFB 161                                 ;
-                                  DEFB 170                                 ;
-                                  DEFB 68                                  ; Horizontal Guardian 2: 
+                                  DEFB 104
+                                  DEFB 0
+                                  DEFB 161
+                                  DEFB 170
+                                  DEFB 68                                  ; Horizontal Guardian 2:
                                   DEFW 23975                               ; y = 13, initial x = 7, 6 <= x <= 15, speed = normal.
-                                  DEFB 104                                 ;
-                                  DEFB 0                                   ;
-                                  DEFB 166                                 ;
-                                  DEFB 175                                 ;
+                                  DEFB 104
+                                  DEFB 0
+                                  DEFB 166
+                                  DEFB 175
                                   DEFB 255,0,0,0,0,0,0                     ; Horizontal Guardian 3 (unused).
                                   DEFB 0,0,0,0,0,0,0                       ; Horizontal Guardian 4 (unused).
                                   DEFB 255                                 ; Terminator.
@@ -4950,7 +4948,7 @@ The next eight bytes define the item graphic.
                                   DG -#-#######------
                                   DG #######-##------
                                   DG --####---#------
-                                  
+
                                   DG -------###------
                                   DG ------#-###-----
                                   DG -----#-###-#----
@@ -4967,7 +4965,7 @@ The next eight bytes define the item graphic.
                                   DG --#-########----
                                   DG -########-##----
                                   DG ---#####---#----
-                                  
+
                                   DG ---------###----
                                   DG --------###-#---
                                   DG -------####--#--
@@ -4984,7 +4982,7 @@ The next eight bytes define the item graphic.
                                   DG --#--#########--
                                   DG -##########-##--
                                   DG ----######---#--
-                                  
+
                                   DG -----------###--
                                   DG ----------##-##-
                                   DG ---------##---##
@@ -5001,7 +4999,7 @@ The next eight bytes define the item graphic.
                                   DG -----#--########
                                   DG ----#########-##
                                   DG ------######---#
-                                  
+
                                   DG --###-----------
                                   DG -##-##----------
                                   DG ##---##---------
@@ -5018,7 +5016,7 @@ The next eight bytes define the item graphic.
                                   DG ########--#-----
                                   DG ##-#########----
                                   DG #---######------
-                                  
+
                                   DG ----###---------
                                   DG ---#-###--------
                                   DG --#--####-------
@@ -5035,7 +5033,7 @@ The next eight bytes define the item graphic.
                                   DG --#########--#--
                                   DG --##-##########-
                                   DG --#---######----
-                                  
+
                                   DG ------###-------
                                   DG -----###-#------
                                   DG ----#-###-#-----
@@ -5052,7 +5050,7 @@ The next eight bytes define the item graphic.
                                   DG ----########-#--
                                   DG ----##-########-
                                   DG ----#---#####---
-                                  
+
                                   DG --------###-----
                                   DG -------###-#----
                                   DG ------####--#---
@@ -5132,7 +5130,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG --#-----
                                   DG ----#---
                                   DG --------
-                                  
+
                                   DB $2E                                   ; Attribute.
                                   DG --#---#-                              ; Wall
                                   DG ########
@@ -5142,8 +5140,8 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ########
                                   DG #---#---
                                   DG ########
-                                  
-                                  
+
+
                                   DB $56                                   ; Attribute.
                                   DG ######--                              ; Conveyor
                                   DG -##--##-
@@ -5153,8 +5151,8 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG --------
                                   DG --------
                                   DG --------
-                                  
-                                  
+
+
                                   DB $16                                   ; Attribute.
                                   DG -#---#--                              ; Nasty 1
                                   DG --#-#---
@@ -5219,7 +5217,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DEFB 96
                                   DEFB 255
                                   DEFB 21                                  ; Item 3 at (7,29)
-                                  DEFW 23805 
+                                  DEFW 23805
                                   DEFB 96
                                   DEFB 255
                                   DEFB 22                                  ; Item 4 at (12,7)
@@ -5273,22 +5271,22 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
 
 ; The next byte initialises the game clock.
 
-                                  DEFB 128                                 ; Game clock. 
+                                  DEFB 128                                 ; Game clock.
 
 ; The next 28 bytes define the horizontal guardians.
 
-                                  DEFB 22                                  ; Horizontal guardian 1: y=3, initial x=12, 1<=x<=12, speed=normal.
-                                  DEFW 23660                               
-                                  DEFB 96                                  
-                                  DEFB 7                                   
-                                  DEFB 97                                  
-                                  DEFB 108                                 
-                                  DEFB 16                                  ; Horizontal guardian 2: y=7, initial x=4, 4<=x<=12, speed=normal.
-                                  DEFW 23780                               
-                                  DEFB 96                                  
-                                  DEFB 0                                   
-                                  DEFB 228                                 
-                                  DEFB 236                                 
+                                  DEFB 22                                  ; Horizontal guardian 1:
+                                  DEFW 23660                               ; y=3, initial x=12, 1<=x<=12, speed=normal.
+                                  DEFB 96
+                                  DEFB 7
+                                  DEFB 97
+                                  DEFB 108
+                                  DEFB 16                                  ; Horizontal guardian 2:
+                                  DEFW 23780                               ; y=7, initial x=4, 4<=x<=12, speed=normal.
+                                  DEFB 96
+                                  DEFB 0
+                                  DEFB 228
+                                  DEFB 236
                                   DEFB 255,0,0,0,0,0,0                     ; Horizontal guardian 3 (unused).
                                   DEFB 0,0,0,0,0,0,0                       ; Horizontal guardian 4 (unused)
                                   DEFB 255                                 ; Terminator
@@ -5300,7 +5298,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
 
 ; The next three bytes are unused.
 
-                                  DEFB 0,0,0                      ; Unused.
+                                  DEFB 0,0,0                               ; Unused.
 
 ; The next 32 bytes define the Eugene graphic.
 
@@ -5339,7 +5337,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ########--------
                                   DG ##-#####--------
                                   DG ##-#####--------
-                                  
+
                                   DG --##------------
                                   DG --##------------
                                   DG --##------------
@@ -5356,7 +5354,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG --########------
                                   DG --##-#####------
                                   DG --##-#####------
-                                  
+
                                   DG ----##----------
                                   DG ----##----------
                                   DG ----##----#-----
@@ -5373,7 +5371,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ----########----
                                   DG ----##-#####----
                                   DG ----##-#####----
-                                  
+
                                   DG ------##--------
                                   DG ------##--------
                                   DG ------##--------
@@ -5390,7 +5388,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ------########--
                                   DG ------##-#####--
                                   DG ------##-#####--
-                                  
+
                                   DG --------##------
                                   DG --------##------
                                   DG --------##------
@@ -5407,7 +5405,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG --########------
                                   DG --#####-##------
                                   DG --#####-##------
-                                  
+
                                   DG ----------##----
                                   DG ----------##----
                                   DG -----#----##----
@@ -5424,7 +5422,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ----########----
                                   DG ----#####-##----
                                   DG ----#####-##----
-                                  
+
                                   DG ------------##--
                                   DG ------------##--
                                   DG ------------##--
@@ -5441,7 +5439,7 @@ EugenesLairData                   DH "2E1010101010101010101010101010101010101013
                                   DG ------########--
                                   DG ------#####-##--
                                   DG ------#####-##--
-                                  
+
                                   DG --------------##
                                   DG --------------##
                                   DG --------------##
@@ -5488,229 +5486,221 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
 
 ; The next 32 bytes specify the cavern name.
 
-                                  DEFM "       Processing Plant         " ; Cavern name.
+                                  DEFM "       Processing Plant         "  ; Cavern name.
 
 ; The next 72 bytes contain the attributes and graphic data for the tiles used to build the cavern.
 
-; Background
-                        db $00                                ; .
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
+                                  DB $00                                   ; Attribute.
+                                  DG --------                              ; Background
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
 
-; Floor
-                        db $44                                ; D
-                        dg ########
-                        dg ########
-                        dg #--##--#
-                        dg #--##--#
-                        dg ########
-                        dg #--##--#
-                        dg -##--##-
-                        dg --------
+                                  DB $44                                   ; Attribute.
+                                  DG ########                              ; Floor
+                                  DG ########
+                                  DG #--##--#
+                                  DG #--##--#
+                                  DG ########
+                                  DG #--##--#
+                                  DG -##--##-
+                                  DG --------
 
-; Crumbling floor
-                        db $04                                ; .
-                        dg ########
-                        dg ##-##-##
-                        dg #-#--#-#
-                        dg --#--#--
-                        dg -#-#--#-
-                        dg --#-----
-                        dg ----#---
-                        dg --------
+                                  DB $04                                   ; Attribute.
+                                  DG ########                              ; Crumbling floor
+                                  DG ##-##-##
+                                  DG #-#--#-#
+                                  DG --#--#--
+                                  DG -#-#--#-
+                                  DG --#-----
+                                  DG ----#---
+                                  DG --------
 
-; Wall
-                        db $16                                ; .
-                        dg ########
-                        dg #--##--#
-                        dg ########
-                        dg -##--##-
-                        dg ########
-                        dg #--##--#
-                        dg ########
-                        dg -##--##-
+                                  DB $16                                   ; Attribute.
+                                  DG ########                              ; Wall
+                                  DG #--##--#
+                                  DG ########
+                                  DG -##--##-
+                                  DG ########
+                                  DG #--##--#
+                                  DG ########
+                                  DG -##--##-
 
-; Conveyor
-                        db $05                                ; .
-                        dg ####----
-                        dg -##--##-
-                        dg ####----
-                        dg -##--##-
-                        dg --------
-                        dg #--##--#
-                        dg ########
-                        dg --------
+                                  DB $05                                   ; Attribute.
+                                  DG ####----                              ; Conveyor
+                                  DG -##--##-
+                                  DG ####----
+                                  DG -##--##-
+                                  DG --------
+                                  DG #--##--#
+                                  DG ########
+                                  DG --------
 
-; Nasty 1
-                        db $43                                ; C
-                        dg -#---#--
-                        dg --#-#---
-                        dg #--#-#--
-                        dg -#-#---#
-                        dg --##-#-#
-                        dg ##-#-##-
-                        dg -#-##---
-                        dg ---#----
+                                  DB $43                                   ; Attribute.
+                                  DG -#---#--                              ; Nasty 1
+                                  DG --#-#---
+                                  DG #--#-#--
+                                  DG -#-#---#
+                                  DG --##-#-#
+                                  DG ##-#-##-
+                                  DG -#-##---
+                                  DG ---#----
 
-; Nasty 2
-                        db $06                                ; .
-                        dg --####--
-                        dg ---##---
-                        dg #-####-#
-                        dg ###--###
-                        dg ###--###
-                        dg #-####-#
-                        dg ---##---
-                        dg --####--
+                                  DB $06                                   ; Attribute.
+                                  DG --####--                              ; Nasty 2
+                                  DG ---##---
+                                  DG #-####-#
+                                  DG ###--###
+                                  DG ###--###
+                                  DG #-####-#
+                                  DG ---##---
+                                  DG --####--
 
-; Extra
-                        db $00                                ; .
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
+                                  DB $00                                   ; Attribute.
+                                  DG --------                              ; Extra
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
 
 ; The next seven bytes specify Miner Willy's initial location and appearance in the cavern.
 
-                        DEFB 48                         ; Pixel y-coordinate * 2.
-                        DEFB 3                          ; Animation frame.
-                        DEFB 1                          ; Direction and movement flags: facing left.
-                        DEFB 0                          ; Airborne status indicator.
-                        DEFW 23663                      ; Location in the attribute buffer at 23552: (3,15).
-                        DEFB 0                          ; Jumping animation counter.
+                                  DEFB 48                                  ; Pixel y-coordinate * 2.
+                                  DEFB 3                                   ; Animation frame.
+                                  DEFB 1                                   ; Direction and movement flags: facing left.
+                                  DEFB 0                                   ; Airborne status indicator.
+                                  DEFW 23663                               ; Location in the attribute buffer at 23552: (3,15).
+                                  DEFB 0                                   ; Jumping animation counter.
 
 ; The next four bytes specify the direction, location and length of the conveyor.
 
-                        DEFB 0                          ; Direction (left).
-                        DEFW 30883                      ; Location in the screen buffer at 28672: (13,3).
-                        DEFB 4                          ; Length.
+                                  DEFB 0                                   ; Direction (left).
+                                  DEFW 30883                               ; Location in the screen buffer at 28672: (13,3).
+                                  DEFB 4                                   ; Length.
 
 ; The next byte and specifies the border colour.
 
-                        DEFB 2                          ; Border colour.
+                                  DEFB 2                                   ; Border colour.
 
 ; The next byte is not used.
 
-                        DEFB 0                          ; Unused.
+                                  DEFB 0                                   ; Unused.
 
 ; The next 25 bytes specify the location and initial colour of the items in the cavern.
 
-                        DEFB 3                          ; Item 1 at (6,15).
-                        DEFW 23759                      ;
-                        DEFB 96                         ;
-                        DEFB 255                        ;
-                        DEFB 4                          ; Item 2 at (6,17).
-                        DEFW 23761                      ;
-                        DEFB 96                         ;
-                        DEFB 255                        ;
-                        DEFB 5                          ; Item 3 at (7,30).
-                        DEFW 23806                      ;
-                        DEFB 96                         ;
-                        DEFB 255                        ;
-                        DEFB 6                          ; Item 4 at (10,1).
-                        DEFW 23873                      ;
-                        DEFB 104                        ;
-                        DEFB 255                        ;
-                        DEFB 3                          ; Item 5 at (11,13).
-                        DEFW 23917                      ;
-                        DEFB 104                        ;
-                        DEFB 255                        ;
-                        DEFB 255                        ; Terminator.
+                                  DEFB 3                                   ; Item 1 at (6,15).
+                                  DEFW 23759
+                                  DEFB 96
+                                  DEFB 255
+                                  DEFB 4                                   ; Item 2 at (6,17).
+                                  DEFW 23761
+                                  DEFB 96
+                                  DEFB 255
+                                  DEFB 5                                   ; Item 3 at (7,30).
+                                  DEFW 23806
+                                  DEFB 96
+                                  DEFB 255
+                                  DEFB 6                                   ; Item 4 at (10,1).
+                                  DEFW 23873
+                                  DEFB 104
+                                  DEFB 255
+                                  DEFB 3                                   ; Item 5 at (11,13).
+                                  DEFW 23917
+                                  DEFB 104
+                                  DEFB 255
+                                  DEFB 255                                 ; Terminator.
 
 ; The next 37 bytes define the portal graphic and its location.
 
-                        db $0E                                ; .
-                        dg ################
-                        dg #------##------#
-                        dg #-############-#
-                        dg #-############-#
-                        dg #-##--------##-#
-                        dg #-##--------##-#
-                        dg #-##--------##-#
-                        dg ####--------####
-                        dg ####--------####
-                        dg #-##--------##-#
-                        dg #-##--------##-#
-                        dg #-##--------##-#
-                        dg #-############-#
-                        dg #-############-#
-                        dg #------##------#
-                        dg ################
+                                  DB $0E                                   ; Attribute.
+                                  DG ################
+                                  DG #------##------#
+                                  DG #-############-#
+                                  DG #-############-#
+                                  DG #-##--------##-#
+                                  DG #-##--------##-#
+                                  DG #-##--------##-#
+                                  DG ####--------####
+                                  DG ####--------####
+                                  DG #-##--------##-#
+                                  DG #-##--------##-#
+                                  DG #-##--------##-#
+                                  DG #-############-#
+                                  DG #-############-#
+                                  DG #------##------#
+                                  DG ################
 
-; Location
-                        dw $5C1D,$601D
+                                  DW $5C1D                                 ; Location
+                                  DW $601D
 
 ; Item graphic
 
-                        dg --##----
-                        dg -#--#---
-                        dg #---#---
-                        dg #--#----
-                        dg -##-#---
-                        dg -----#--
-                        dg ----#-#-
-                        dg -----#--
+                                  DG --##----
+                                  DG -#--#---
+                                  DG #---#---
+                                  DG #--#----
+                                  DG -##-#---
+                                  DG -----#--
+                                  DG ----#-#-
+                                  DG -----#--
 
 ; The next byte specifies the initial air supply in the cavern.
 
-                        DEFB 63                         ; Air.
+                                  DEFB 63                                  ; Air.
 
 ; The next byte initialises the game clock.
 
-                        DEFB 128                        ; Game clock.
+                                  DEFB 128                                 ; Game clock.
 
 ; The next 28 bytes define the horizontal guardians.
 
-                        DEFB 70                         ; Horizontal guardian 1: y=8, initial x=6, 6<=x<=13, speed=normal.
-                        DEFW 23814
-                        DEFB 104
-                        DEFB 0
-                        DEFB 6
-                        DEFB 13
-                        DEFB 67                         ; Horizontal guardian 2: y=8, initial x=14, 14<=x<=21, speed=normal.
-                        DEFW 23822
-                        DEFB 104
-                        DEFB 1
-                        DEFB 14
-                        DEFB 21
-                        DEFB 69                         ; Horizontal guardian 3: y=13, initial x=8, 8<=x<=20, speed=normal.
-                        DEFW 23976
-                        DEFB 104
-                        DEFB 2
-                        DEFB 168
-                        DEFB 180
-                        DEFB 6                          ; Horizontal guardian 4: y=13, initial x=24, 24<=x<=29, speed=normal.
-                        DEFW 23992
-                        DEFB 104
-                        DEFB 3
-                        DEFB 184
-                        DEFB 189
-                        DEFB 255                        ; Terminator.
+                                  DEFB 70                                  ; Horizontal guardian 1:
+                                  DEFW 23814                               ; y=8, initial x=6, 6<=x<=13, speed=normal.
+                                  DEFB 104
+                                  DEFB 0
+                                  DEFB 6
+                                  DEFB 13
+                                  DEFB 67                                  ; Horizontal guardian 2:
+                                  DEFW 23822                               ; y=8, initial x=14, 14<=x<=21, speed=normal.
+                                  DEFB 104
+                                  DEFB 1
+                                  DEFB 14
+                                  DEFB 21
+                                  DEFB 69                                  ; Horizontal guardian 3:
+                                  DEFW 23976                               ; y=13, initial x=8, 8<=x<=20, speed=normal.
+                                  DEFB 104
+                                  DEFB 2
+                                  DEFB 168
+                                  DEFB 180
+                                  DEFB 6                                   ; Horizontal guardian 4:
+                                  DEFW 23992                               ; y=13, initial x=24, 24<=x<=29, speed=normal.
+                                  DEFB 104
+                                  DEFB 3
+                                  DEFB 184
+                                  DEFB 189
+                                  DEFB 255                                 ; Terminator.
 
 ; The next two bytes but are not used.
 
-                        DEFB 0,0                        ; Unused.
+                                  DEFB 0,0                                 ; Unused.
 
 ; The next 28 bytes define the vertical guardians.
 
-                        DEFB 255,0,0,0,0,0,0            ; Vertical guardian 1 (unused).
-                        DEFB 0,0,0,0,0,0,0              ; Vertical guardian 2 (unused).
-                        DEFB 0,0,0,0,0,0,0              ; Vertical guardian 3 (unused).
-                        DEFB 0,0,0,0,0,0,0              ; Vertical guardian 4 (unused).
+                                  DEFB 255,0,0,0,0,0,0                     ; Vertical guardian 1 (unused).
+                                  DEFB 0,0,0,0,0,0,0                       ; Vertical guardian 2 (unused).
+                                  DEFB 0,0,0,0,0,0,0                       ; Vertical guardian 3 (unused).
+                                  DEFB 0,0,0,0,0,0,0                       ; Vertical guardian 4 (unused).
 
 ; The next 7 bytes are unused.
 
-                        DEFB 0,0,0,0,0,0,0              ; Unused.
+                                  DEFB 0,0,0,0,0,0,0                       ; Unused.
 
 ; The next 256 bytes define the guardian graphics.
 
@@ -5730,7 +5720,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG ----#-#---------
                                   DG ----#-#---------
                                   DG ---#####--------
-                                  
+
                                   DG -----#####------
                                   DG ---#########----
                                   DG ---####--###----
@@ -5747,7 +5737,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG -----#####------
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG -------#####----
                                   DG -----#########--
                                   DG -----###--#####-
@@ -5764,7 +5754,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG ----------------
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG ---------#####--
                                   DG -------###--####
                                   DG -------###--###-
@@ -5781,7 +5771,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG ---------#####--
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG --#####---------
                                   DG ####--###-------
                                   DG -###--###-------
@@ -5798,7 +5788,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG --#####---------
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG ----#####-------
                                   DG --#########-----
                                   DG -#####--###-----
@@ -5815,7 +5805,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG ----------------
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG ------#####-----
                                   DG ----#########---
                                   DG ----###--####---
@@ -5832,7 +5822,7 @@ ProcessingPlantData               DH "160000000000000000000000000000000000000000
                                   DG ------#####-----
                                   DG ----------------
                                   DG ----------------
-                                  
+
                                   DG --------#####---
                                   DG ------#########-
                                   DG -----#####--###-
@@ -5879,94 +5869,94 @@ TheVatData                        DH "4D000000000000000000000000004D4D4D4D4D4D4D
 ; Cavern name
 
                                   db "            The Vat             "
-                                  
-; Background                      
+
+; Background
                                   db $00
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  
-; Floor                           
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+
+; Floor
                                   db $46
-                                  dg ########
-                                  dg ########
-                                  dg ##-##-##
-                                  dg -##-###-
-                                  dg ##---#-#
-                                  dg -#------
-                                  dg --------
-                                  dg --------
-                                  
-; Crumbling floor                 
+                                  DG ########
+                                  DG ########
+                                  DG ##-##-##
+                                  DG -##-###-
+                                  DG ##---#-#
+                                  DG -#------
+                                  DG --------
+                                  DG --------
+
+; Crumbling floor
                                   db $02
-                                  dg ########
-                                  dg #-#-#-#-
-                                  dg -#-#-#-#
-                                  dg #-#-#-#-
-                                  dg -#-#-#-#
-                                  dg #-#-#-#-
-                                  dg -#-#-#-#
-                                  dg #-#-#-#-
-                                  
-; Wall                            
+                                  DG ########
+                                  DG #-#-#-#-
+                                  DG -#-#-#-#
+                                  DG #-#-#-#-
+                                  DG -#-#-#-#
+                                  DG #-#-#-#-
+                                  DG -#-#-#-#
+                                  DG #-#-#-#-
+
+; Wall
                                   db $4D
-                                  dg --#---#-
-                                  dg ########
-                                  dg #---#---
-                                  dg ########
-                                  dg --#---#-
-                                  dg ########
-                                  dg #---#---
-                                  dg ########
-                                  
-; Conveyor                        
+                                  DG --#---#-
+                                  DG ########
+                                  DG #---#---
+                                  DG ########
+                                  DG --#---#-
+                                  DG ########
+                                  DG #---#---
+                                  DG ########
+
+; Conveyor
                                   db $04
-                                  dg ####-#--
-                                  dg -##--##-
-                                  dg ####-#--
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  
-; Nasty 1                         
+                                  DG ####-#--
+                                  DG -##--##-
+                                  DG ####-#--
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+
+; Nasty 1
                                   db $15
-                                  dg -#---#--
-                                  dg --#-#---
-                                  dg #--#-#--
-                                  dg -#-#---#
-                                  dg --##-#-#
-                                  dg ##-#-##-
-                                  dg -#-##---
-                                  dg ---#----
-                                  
-; Nasty 2                         
+                                  DG -#---#--
+                                  DG --#-#---
+                                  DG #--#-#--
+                                  DG -#-#---#
+                                  DG --##-#-#
+                                  DG ##-#-##-
+                                  DG -#-##---
+                                  DG ---#----
+
+; Nasty 2
                                   db $16
-                                  dg #-#--#-#
-                                  dg -#----#-
-                                  dg --####--
-                                  dg ##-##-##
-                                  dg --####--
-                                  dg -######-
-                                  dg #-#--#-#
-                                  dg --#--#--
-                                  
-; Extra                           
+                                  DG #-#--#-#
+                                  DG -#----#-
+                                  DG --####--
+                                  DG ##-##-##
+                                  DG --####--
+                                  DG -######-
+                                  DG #-#--#-#
+                                  DG --#--#--
+
+; Extra
                                   db $00
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
 
 ; Pixel y-coordinate * 2.
                         db $D0
@@ -6031,65 +6021,65 @@ TheVatData                        DH "4D000000000000000000000000004D4D4D4D4D4D4D
 ; Portal
 
                                   db $0B
-                                  dg ################
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg ################
-                                  dg ################
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg #------##------#
-                                  dg ################
-                                  
-; Location                        
+                                  DG ################
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG ################
+                                  DG ################
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG #------##------#
+                                  DG ################
+
+; Location
                                   dw $5DAF,$68AF
-                                  
-; Item graphic                    
-                                  
-                                  dg --##----
-                                  dg -#--#---
-                                  dg #---#---
-                                  dg #--#----
-                                  dg -##-#---
-                                  dg -----#--
-                                  dg ----#-#-
-                                  dg -----#--
-                                  
-; Air supply                      
+
+; Item graphic
+
+                                  DG --##----
+                                  DG -#--#---
+                                  DG #---#---
+                                  DG #--#----
+                                  DG -##-#---
+                                  DG -----#--
+                                  DG ----#-#-
+                                  DG -----#--
+
+; Air supply
                                   db $3F
-                                  
-; Game clock                      
+
+; Game clock
                                   db $80
-                                  
-; Horizontal guardians            
-                                  
+
+; Horizontal guardians
+
                                   db $45
                                   dw $5C2F
                                   db $60,$00,$2F,$3D
-                                  
+
                                   db $43
                                   dw $5D0A
                                   db $68,$07,$02,$0A
-                                  
+
                                   db $06
                                   dw $5DB1
                                   db $68,$00,$B1,$BD
-                                  
+
                                   db $FF
                                   dw $0000
                                   db $00,$00,$00,$00
-                                  
-; Terminator                      
+
+; Terminator
                                   db $FF
-                                  
-; Unused?                         
+
+; Unused?
                                   db $00,$00
 
 ; Vertical guardians
@@ -6097,161 +6087,161 @@ TheVatData                        DH "4D000000000000000000000000004D4D4D4D4D4D4D
                                   db $FF
                                   dw $0000
                                   db $00,$00,$00,$00
-                                  
+
                                   db $00
                                   dw $0000
                                   db $00,$00,$00,$00
-                                  
+
                                   db $00
                                   dw $0000
                                   db $00,$00,$00,$00
-                                  
+
                                   db $00
                                   dw $0000
                                   db $00,$00,$00,$00
-                                  
-; Terminator                      
+
+; Terminator
                                   db $00
-                                  
-; Unused?                         
+
+; Unused?
                                   db $00,$00,$00,$00,$00,$00
-                                  
-                                  
-                                  dg ---##-----------
-                                  dg ---###----------
-                                  dg ----#-#-#-------
-                                  dg ----#####-------
-                                  dg ----##----------
-                                  dg ---###----------
-                                  dg ---####---------
-                                  dg ---###-#--------
-                                  dg --####----------
-                                  dg --#####---------
-                                  dg --#####---------
-                                  dg -##-###---------
-                                  dg -#---#----------
-                                  dg -#----#---------
-                                  dg #------#--------
-                                  dg ----------------
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg -----##---------
-                                  dg -----###--------
-                                  dg ------#-#-#-----
-                                  dg ------#####-----
-                                  dg ------###-------
-                                  dg -----###--------
-                                  dg -----####-------
-                                  dg -----###-#------
-                                  dg ----####--------
-                                  dg ----#####-------
-                                  dg ----#####-------
-                                  dg ---##-###-------
-                                  dg --##--##--------
-                                  dg -#------##------
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg -------##-------
-                                  dg -------###------
-                                  dg --------#-#-#---
-                                  dg --------#####---
-                                  dg --------###-----
-                                  dg -------###------
-                                  dg -------####-----
-                                  dg -------###-#----
-                                  dg ------####------
-                                  dg ------#####-----
-                                  dg -----######-----
-                                  dg --#####-#####---
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ---------##-----
-                                  dg ---------###----
-                                  dg ----------#-#-#-
-                                  dg ----------#####-
-                                  dg ----------###---
-                                  dg ---------###----
-                                  dg ---------####---
-                                  dg ---------###-#--
-                                  dg --------####----
-                                  dg --------#####---
-                                  dg -------######---
-                                  dg -------##-##----
-                                  dg ------##----##--
-                                  dg -----#----------
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg -----##---------
-                                  dg ----###---------
-                                  dg -#-#-#----------
-                                  dg -#####----------
-                                  dg ---###----------
-                                  dg ----###---------
-                                  dg ---####---------
-                                  dg --#-###---------
-                                  dg ----####--------
-                                  dg ---#####--------
-                                  dg ---######-------
-                                  dg ----##-##-------
-                                  dg --##----##------
-                                  dg ----------#-----
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg -------##-------
-                                  dg ------###-------
-                                  dg ---#-#-#--------
-                                  dg ---#####--------
-                                  dg -----###--------
-                                  dg ------###-------
-                                  dg -----####-------
-                                  dg ----#-###-------
-                                  dg ------####------
-                                  dg -----#####------
-                                  dg -----######-----
-                                  dg ---#####-#####--
-                                  
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ---------##-----
-                                  dg --------###-----
-                                  dg -----#-#-#------
-                                  dg -----#####------
-                                  dg -------###------
-                                  dg --------###-----
-                                  dg -------####-----
-                                  dg ------#-###-----
-                                  dg --------####----
-                                  dg -------#####----
-                                  dg -------#####----
-                                  dg -------###-##---
-                                  dg --------##--##--
-                                  dg ------##------#-
-                                  
-                                  dg -----------##---
-                                  dg ----------###---
-                                  dg -------#-#-#----
-                                  dg -------#####----
-                                  dg ----------##----
-                                  dg ----------###---
-                                  dg ---------####---
-                                  dg --------#-###---
-                                  dg ----------####--
-                                  dg ---------#####--
-                                  dg ---------#####--
-                                  dg ---------###-##-
-                                  dg ----------#---#-
-                                  dg ---------#----#-
-                                  dg --------#------#
-                                  dg ----------------
+
+
+                                  DG ---##-----------
+                                  DG ---###----------
+                                  DG ----#-#-#-------
+                                  DG ----#####-------
+                                  DG ----##----------
+                                  DG ---###----------
+                                  DG ---####---------
+                                  DG ---###-#--------
+                                  DG --####----------
+                                  DG --#####---------
+                                  DG --#####---------
+                                  DG -##-###---------
+                                  DG -#---#----------
+                                  DG -#----#---------
+                                  DG #------#--------
+                                  DG ----------------
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG -----##---------
+                                  DG -----###--------
+                                  DG ------#-#-#-----
+                                  DG ------#####-----
+                                  DG ------###-------
+                                  DG -----###--------
+                                  DG -----####-------
+                                  DG -----###-#------
+                                  DG ----####--------
+                                  DG ----#####-------
+                                  DG ----#####-------
+                                  DG ---##-###-------
+                                  DG --##--##--------
+                                  DG -#------##------
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG -------##-------
+                                  DG -------###------
+                                  DG --------#-#-#---
+                                  DG --------#####---
+                                  DG --------###-----
+                                  DG -------###------
+                                  DG -------####-----
+                                  DG -------###-#----
+                                  DG ------####------
+                                  DG ------#####-----
+                                  DG -----######-----
+                                  DG --#####-#####---
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ---------##-----
+                                  DG ---------###----
+                                  DG ----------#-#-#-
+                                  DG ----------#####-
+                                  DG ----------###---
+                                  DG ---------###----
+                                  DG ---------####---
+                                  DG ---------###-#--
+                                  DG --------####----
+                                  DG --------#####---
+                                  DG -------######---
+                                  DG -------##-##----
+                                  DG ------##----##--
+                                  DG -----#----------
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG -----##---------
+                                  DG ----###---------
+                                  DG -#-#-#----------
+                                  DG -#####----------
+                                  DG ---###----------
+                                  DG ----###---------
+                                  DG ---####---------
+                                  DG --#-###---------
+                                  DG ----####--------
+                                  DG ---#####--------
+                                  DG ---######-------
+                                  DG ----##-##-------
+                                  DG --##----##------
+                                  DG ----------#-----
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG -------##-------
+                                  DG ------###-------
+                                  DG ---#-#-#--------
+                                  DG ---#####--------
+                                  DG -----###--------
+                                  DG ------###-------
+                                  DG -----####-------
+                                  DG ----#-###-------
+                                  DG ------####------
+                                  DG -----#####------
+                                  DG -----######-----
+                                  DG ---#####-#####--
+
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ---------##-----
+                                  DG --------###-----
+                                  DG -----#-#-#------
+                                  DG -----#####------
+                                  DG -------###------
+                                  DG --------###-----
+                                  DG -------####-----
+                                  DG ------#-###-----
+                                  DG --------####----
+                                  DG -------#####----
+                                  DG -------#####----
+                                  DG -------###-##---
+                                  DG --------##--##--
+                                  DG ------##------#-
+
+                                  DG -----------##---
+                                  DG ----------###---
+                                  DG -------#-#-#----
+                                  DG -------#####----
+                                  DG ----------##----
+                                  DG ----------###---
+                                  DG ---------####---
+                                  DG --------#-###---
+                                  DG ----------####--
+                                  DG ---------#####--
+                                  DG ---------#####--
+                                  DG ---------###-##-
+                                  DG ----------#---#-
+                                  DG ---------#----#-
+                                  DG --------#------#
+                                  DG ----------------
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -6521,141 +6511,141 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         db $00,$00,$00,$00,$00,$00
 
 
-                        dg ---#--####--#---
-                        dg ---###-##-###---
-                        dg ----########----
-                        dg -----##--##-----
-                        dg -----#-##-#-----
-                        dg ------#--#------
-                        dg -----######-----
-                        dg ----########----
-                        dg ---##########---
-                        dg --##--####--##--
-                        dg -##---####---##-
-                        dg -#---##--##---#-
-                        dg --#-##----##-#--
-                        dg -----##--##-----
-                        dg ------#--#------
-                        dg ----###--###----
+                        DG ---#--####--#---
+                        DG ---###-##-###---
+                        DG ----########----
+                        DG -----##--##-----
+                        DG -----#-##-#-----
+                        DG ------#--#------
+                        DG -----######-----
+                        DG ----########----
+                        DG ---##########---
+                        DG --##--####--##--
+                        DG -##---####---##-
+                        DG -#---##--##---#-
+                        DG --#-##----##-#--
+                        DG -----##--##-----
+                        DG ------#--#------
+                        DG ----###--###----
 
-                        dg ----#-####-#----
-                        dg ----##-##-##----
-                        dg ----########----
-                        dg -----##--##-----
-                        dg -----#-##-#-----
-                        dg ------#--#------
-                        dg ------####------
-                        dg ---##########---
-                        dg -##############-
-                        dg ###--######--###
-                        dg #-----####-----#
-                        dg ##---######---##
-                        dg -----##--##-----
-                        dg ----##----##----
-                        dg ----#------#----
-                        dg --###------###--
+                        DG ----#-####-#----
+                        DG ----##-##-##----
+                        DG ----########----
+                        DG -----##--##-----
+                        DG -----#-##-#-----
+                        DG ------#--#------
+                        DG ------####------
+                        DG ---##########---
+                        DG -##############-
+                        DG ###--######--###
+                        DG #-----####-----#
+                        DG ##---######---##
+                        DG -----##--##-----
+                        DG ----##----##----
+                        DG ----#------#----
+                        DG --###------###--
 
-                        dg ---###----###---
-                        dg -----##--##-----
-                        dg ----##----##----
-                        dg -##--##--##--##-
-                        dg --#---####---#--
-                        dg -##--######--##-
-                        dg --##-######-##--
-                        dg ---##########---
-                        dg ----########----
-                        dg -----######-----
-                        dg ------#--#------
-                        dg -----#-##-#-----
-                        dg -----##--##-----
-                        dg ----########----
-                        dg ----##-##-##----
-                        dg ----#-####-#----
+                        DG ---###----###---
+                        DG -----##--##-----
+                        DG ----##----##----
+                        DG -##--##--##--##-
+                        DG --#---####---#--
+                        DG -##--######--##-
+                        DG --##-######-##--
+                        DG ---##########---
+                        DG ----########----
+                        DG -----######-----
+                        DG ------#--#------
+                        DG -----#-##-#-----
+                        DG -----##--##-----
+                        DG ----########----
+                        DG ----##-##-##----
+                        DG ----#-####-#----
 
-                        dg -###--------###-
-                        dg ---##------##---
-                        dg ----##----##----
-                        dg -----##--##-----
-                        dg -##---####---##-
-                        dg --#--######--#--
-                        dg -##--######--##-
-                        dg --##-######-##--
-                        dg ---##########---
-                        dg ----########----
-                        dg ------#--#------
-                        dg -----#-##-#-----
-                        dg ---#-##--##-#---
-                        dg ----########----
-                        dg ----##-##-##----
-                        dg ------####------
+                        DG -###--------###-
+                        DG ---##------##---
+                        DG ----##----##----
+                        DG -----##--##-----
+                        DG -##---####---##-
+                        DG --#--######--#--
+                        DG -##--######--##-
+                        DG --##-######-##--
+                        DG ---##########---
+                        DG ----########----
+                        DG ------#--#------
+                        DG -----#-##-#-----
+                        DG ---#-##--##-#---
+                        DG ----########----
+                        DG ----##-##-##----
+                        DG ------####------
 
-                        dg ----#-----------
-                        dg -----#-#--------
-                        dg ----#---#-------
-                        dg --#--#-#--------
-                        dg -#--#---#-------
-                        dg --#----#--------
-                        dg -#--##----------
-                        dg --##--##--------
-                        dg -#---#--#-------
-                        dg -#---#--#-------
-                        dg #---#----#------
-                        dg #----#---#------
-                        dg -#--#---#-------
-                        dg -#--#---#-------
-                        dg --##--##--------
-                        dg ----##----------
+                        DG ----#-----------
+                        DG -----#-#--------
+                        DG ----#---#-------
+                        DG --#--#-#--------
+                        DG -#--#---#-------
+                        DG --#----#--------
+                        DG -#--##----------
+                        DG --##--##--------
+                        DG -#---#--#-------
+                        DG -#---#--#-------
+                        DG #---#----#------
+                        DG #----#---#------
+                        DG -#--#---#-------
+                        DG -#--#---#-------
+                        DG --##--##--------
+                        DG ----##----------
 
-                        dg ------#---------
-                        dg ---#---#--#-----
-                        dg ----#-#--#------
-                        dg ---#---#--#-----
-                        dg ----#-#--#------
-                        dg ---#------#-----
-                        dg ------##--------
-                        dg ----##--##------
-                        dg ---#------#-----
-                        dg ---#-----##-----
-                        dg --#---#-#--#----
-                        dg --#--#-#---#----
-                        dg ---##-----#-----
-                        dg ---#------#-----
-                        dg ----##--##------
-                        dg ------##--------
+                        DG ------#---------
+                        DG ---#---#--#-----
+                        DG ----#-#--#------
+                        DG ---#---#--#-----
+                        DG ----#-#--#------
+                        DG ---#------#-----
+                        DG ------##--------
+                        DG ----##--##------
+                        DG ---#------#-----
+                        DG ---#-----##-----
+                        DG --#---#-#--#----
+                        DG --#--#-#---#----
+                        DG ---##-----#-----
+                        DG ---#------#-----
+                        DG ----##--##------
+                        DG ------##--------
 
-                        dg ---------#------
-                        dg ------#---#-----
-                        dg -----#---#--#---
-                        dg ------#---#--#--
-                        dg -----#---#--#---
-                        dg ------#------#--
-                        dg --------##--#---
-                        dg ------##--##----
-                        dg -----#------#---
-                        dg -----#------#---
-                        dg ----#-##-#---#--
-                        dg ----#---#-##-#--
-                        dg -----#------#---
-                        dg -----#------#---
-                        dg ------##--##----
-                        dg --------##------
+                        DG ---------#------
+                        DG ------#---#-----
+                        DG -----#---#--#---
+                        DG ------#---#--#--
+                        DG -----#---#--#---
+                        DG ------#------#--
+                        DG --------##--#---
+                        DG ------##--##----
+                        DG -----#------#---
+                        DG -----#------#---
+                        DG ----#-##-#---#--
+                        DG ----#---#-##-#--
+                        DG -----#------#---
+                        DG -----#------#---
+                        DG ------##--##----
+                        DG --------##------
 
-                        dg ---------#---#--
-                        dg -------#--#---#-
-                        dg ------#--#---#--
-                        dg -------#--#---#-
-                        dg ------#--#---#--
-                        dg -------#------#-
-                        dg ------#---##----
-                        dg --------##--##--
-                        dg -------#-#----#-
-                        dg -------#--#---#-
-                        dg ------#----#---#
-                        dg ------#---#----#
-                        dg -------#---#--#-
-                        dg -------#----#-#-
-                        dg --------##--##--
-                        dg ----------##----
+                        DG ---------#---#--
+                        DG -------#--#---#-
+                        DG ------#--#---#--
+                        DG -------#--#---#-
+                        DG ------#--#---#--
+                        DG -------#------#-
+                        DG ------#---##----
+                        DG --------##--##--
+                        DG -------#-#----#-
+                        DG -------#--#---#-
+                        DG ------#----#---#
+                        DG ------#---#----#
+                        DG -------#---#--#-
+                        DG -------#----#-#-
+                        DG --------##--##--
+                        DG ----------##----
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -6927,141 +6917,141 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         db $00,$00,$00,$00,$00,$00
 
 
-                        dg ----#-#---#-----
-                        dg ---#-##--##-#---
-                        dg -------#-#-#----
-                        dg --###--#-##---#-
-                        dg -##--#-###--###-
-                        dg ------####-#----
-                        dg ###########-###-
-                        dg #----#######---#
-                        dg -###-######--#--
-                        dg ##---###########
-                        dg #---#-######---#
-                        dg --##--#-#-#-##--
-                        dg -##--#--#-#--##-
-                        dg -#--#--##-#---#-
-                        dg ---#--#-#--#----
-                        dg --##-##-#--##---
+                        DG ----#-#---#-----
+                        DG ---#-##--##-#---
+                        DG -------#-#-#----
+                        DG --###--#-##---#-
+                        DG -##--#-###--###-
+                        DG ------####-#----
+                        DG ###########-###-
+                        DG #----#######---#
+                        DG -###-######--#--
+                        DG ##---###########
+                        DG #---#-######---#
+                        DG --##--#-#-#-##--
+                        DG -##--#--#-#--##-
+                        DG -#--#--##-#---#-
+                        DG ---#--#-#--#----
+                        DG --##-##-#--##---
 
-                        dg ----------------
-                        dg -----#-#--#-----
-                        dg ------##-#------
-                        dg --##---#-###-#--
-                        dg ---###-###--##--
-                        dg ------####-#----
-                        dg --#########-##--
-                        dg -----#######-#--
-                        dg --#########-----
-                        dg -##--#########--
-                        dg ----#-######--#-
-                        dg --##--#-#-#-##--
-                        dg --#--#--#-#--#--
-                        dg ----#-###--#----
-                        dg ---##-#-##-##---
-                        dg --------##------
+                        DG ----------------
+                        DG -----#-#--#-----
+                        DG ------##-#------
+                        DG --##---#-###-#--
+                        DG ---###-###--##--
+                        DG ------####-#----
+                        DG --#########-##--
+                        DG -----#######-#--
+                        DG --#########-----
+                        DG -##--#########--
+                        DG ----#-######--#-
+                        DG --##--#-#-#-##--
+                        DG --#--#--#-#--#--
+                        DG ----#-###--#----
+                        DG ---##-#-##-##---
+                        DG --------##------
 
-                        dg ----------------
-                        dg ----------------
-                        dg ------#---#-----
-                        dg ----#--#-##-----
-                        dg -----#-###--#---
-                        dg ------####-#----
-                        dg ---########-----
-                        dg -----########---
-                        dg ---########-----
-                        dg ---#-########---
-                        dg ----########----
-                        dg ---#--#-#-#-#---
-                        dg -----#-##-#-----
-                        dg ----#-#-#-##----
-                        dg --------##------
-                        dg ----------------
+                        DG ----------------
+                        DG ----------------
+                        DG ------#---#-----
+                        DG ----#--#-##-----
+                        DG -----#-###--#---
+                        DG ------####-#----
+                        DG ---########-----
+                        DG -----########---
+                        DG ---########-----
+                        DG ---#-########---
+                        DG ----########----
+                        DG ---#--#-#-#-#---
+                        DG -----#-##-#-----
+                        DG ----#-#-#-##----
+                        DG --------##------
+                        DG ----------------
 
-                        dg ----------------
-                        dg -----#-#--#-----
-                        dg ------##-#------
-                        dg --##---#-###-#--
-                        dg ---###-###--##--
-                        dg ------####-#----
-                        dg --#########-##--
-                        dg -----#######-#--
-                        dg --#########-----
-                        dg -##--#########--
-                        dg ----#-######--#-
-                        dg --##--#-#-#-##--
-                        dg --#--#--#-#--#--
-                        dg ----#-###--#----
-                        dg ---##-#-##-##---
-                        dg --------##------
+                        DG ----------------
+                        DG -----#-#--#-----
+                        DG ------##-#------
+                        DG --##---#-###-#--
+                        DG ---###-###--##--
+                        DG ------####-#----
+                        DG --#########-##--
+                        DG -----#######-#--
+                        DG --#########-----
+                        DG -##--#########--
+                        DG ----#-######--#-
+                        DG --##--#-#-#-##--
+                        DG --#--#--#-#--#--
+                        DG ----#-###--#----
+                        DG ---##-#-##-##---
+                        DG --------##------
 
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ----##----------
-                        dg ##########------
-                        dg ----##----------
-                        dg -##----##-------
-                        dg ##-#--#-##------
-                        dg #-##--##-#------
-                        dg -##----##-------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ----##----------
+                        DG ##########------
+                        DG ----##----------
+                        DG -##----##-------
+                        DG ##-#--#-##------
+                        DG #-##--##-#------
+                        DG -##----##-------
 
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ------##--------
-                        dg --##########----
-                        dg ------##--------
-                        dg ---##----##-----
-                        dg --#--#--##-#----
-                        dg --####--##-#----
-                        dg ---##----##-----
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ------##--------
+                        DG --##########----
+                        DG ------##--------
+                        DG ---##----##-----
+                        DG --#--#--##-#----
+                        DG --####--##-#----
+                        DG ---##----##-----
 
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg ----##########--
-                        dg --------##------
-                        dg -----##----##---
-                        dg ----#-##--##-#--
-                        dg ----##-#--#-##--
-                        dg -----##----##---
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG ----##########--
+                        DG --------##------
+                        DG -----##----##---
+                        DG ----#-##--##-#--
+                        DG ----##-#--#-##--
+                        DG -----##----##---
 
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ----------##----
-                        dg ------##########
-                        dg ----------##----
-                        dg -------##----##-
-                        dg ------#--#--##-#
-                        dg ------####--##-#
-                        dg -------##----##-
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ----------##----
+                        DG ------##########
+                        DG ----------##----
+                        DG -------##----##-
+                        DG ------#--#--##-#
+                        DG ------####--##-#
+                        DG -------##----##-
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -7333,141 +7323,141 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         db $00,$00,$00,$00,$00,$00
 
 
-                        dg -###------------
-                        dg -#-#------------
-                        dg -#####----------
-                        dg --##-#----------
-                        dg --#####---------
-                        dg --#####---------
-                        dg ---##-----------
-                        dg --####----------
-                        dg -######---------
-                        dg -######---------
-                        dg ####-###--------
-                        dg #####-##--------
-                        dg --####----------
-                        dg -###-##---------
-                        dg -##-###---------
-                        dg -###-###--------
+                        DG -###------------
+                        DG -#-#------------
+                        DG -#####----------
+                        DG --##-#----------
+                        DG --#####---------
+                        DG --#####---------
+                        DG ---##-----------
+                        DG --####----------
+                        DG -######---------
+                        DG -######---------
+                        DG ####-###--------
+                        DG #####-##--------
+                        DG --####----------
+                        DG -###-##---------
+                        DG -##-###---------
+                        DG -###-###--------
 
-                        dg ---###----------
-                        dg ---#-#----------
-                        dg ---#####--------
-                        dg ----##-#--------
-                        dg ----#####-------
-                        dg ----#####-------
-                        dg -----##---------
-                        dg ----####--------
-                        dg ---##-###-------
-                        dg ---##-###-------
-                        dg ---##-###-------
-                        dg ---###-##-------
-                        dg ----####--------
-                        dg -----##---------
-                        dg -----##---------
-                        dg -----###--------
+                        DG ---###----------
+                        DG ---#-#----------
+                        DG ---#####--------
+                        DG ----##-#--------
+                        DG ----#####-------
+                        DG ----#####-------
+                        DG -----##---------
+                        DG ----####--------
+                        DG ---##-###-------
+                        DG ---##-###-------
+                        DG ---##-###-------
+                        DG ---###-##-------
+                        DG ----####--------
+                        DG -----##---------
+                        DG -----##---------
+                        DG -----###--------
 
-                        dg -----###--------
-                        dg -----#-#--------
-                        dg -----#####------
-                        dg ------##-#------
-                        dg ------#####-----
-                        dg ------#####-----
-                        dg -------##-------
-                        dg ------####------
-                        dg -----######-----
-                        dg -----######-----
-                        dg ----####-###----
-                        dg ----#####-##----
-                        dg ------####------
-                        dg -----###-##-----
-                        dg -----##-###-----
-                        dg -----###-###----
+                        DG -----###--------
+                        DG -----#-#--------
+                        DG -----#####------
+                        DG ------##-#------
+                        DG ------#####-----
+                        DG ------#####-----
+                        DG -------##-------
+                        DG ------####------
+                        DG -----######-----
+                        DG -----######-----
+                        DG ----####-###----
+                        DG ----#####-##----
+                        DG ------####------
+                        DG -----###-##-----
+                        DG -----##-###-----
+                        DG -----###-###----
 
-                        dg -------###------
-                        dg -------#-#------
-                        dg -------#####----
-                        dg --------##-#----
-                        dg --------#####---
-                        dg --------#####---
-                        dg ---------##-----
-                        dg --------####----
-                        dg -------######---
-                        dg ------########--
-                        dg -----##########-
-                        dg -----##-####-##-
-                        dg --------#####---
-                        dg -------###-##-#-
-                        dg ------##----###-
-                        dg ------###----#--
+                        DG -------###------
+                        DG -------#-#------
+                        DG -------#####----
+                        DG --------##-#----
+                        DG --------#####---
+                        DG --------#####---
+                        DG ---------##-----
+                        DG --------####----
+                        DG -------######---
+                        DG ------########--
+                        DG -----##########-
+                        DG -----##-####-##-
+                        DG --------#####---
+                        DG -------###-##-#-
+                        DG ------##----###-
+                        DG ------###----#--
 
-                        dg ------###-------
-                        dg -----##-#-------
-                        dg ----#####-------
-                        dg ----#-##--------
-                        dg ---#####--------
-                        dg ---#####--------
-                        dg -----##---------
-                        dg ----####--------
-                        dg ---######-------
-                        dg --########------
-                        dg -##########-----
-                        dg -##-####-##-----
-                        dg ---#####--------
-                        dg -#-##-###-------
-                        dg -###----##------
-                        dg --#----###------
+                        DG ------###-------
+                        DG -----##-#-------
+                        DG ----#####-------
+                        DG ----#-##--------
+                        DG ---#####--------
+                        DG ---#####--------
+                        DG -----##---------
+                        DG ----####--------
+                        DG ---######-------
+                        DG --########------
+                        DG -##########-----
+                        DG -##-####-##-----
+                        DG ---#####--------
+                        DG -#-##-###-------
+                        DG -###----##------
+                        DG --#----###------
 
-                        dg --------###-----
-                        dg -------##-#-----
-                        dg ------#####-----
-                        dg ------#-##------
-                        dg -----#####------
-                        dg -----#####------
-                        dg -------##-------
-                        dg ------####------
-                        dg -----######-----
-                        dg -----######-----
-                        dg ----###-####----
-                        dg ----##-#####----
-                        dg ------####------
-                        dg -----##-###-----
-                        dg -----###-##-----
-                        dg ----###-###-----
+                        DG --------###-----
+                        DG -------##-#-----
+                        DG ------#####-----
+                        DG ------#-##------
+                        DG -----#####------
+                        DG -----#####------
+                        DG -------##-------
+                        DG ------####------
+                        DG -----######-----
+                        DG -----######-----
+                        DG ----###-####----
+                        DG ----##-#####----
+                        DG ------####------
+                        DG -----##-###-----
+                        DG -----###-##-----
+                        DG ----###-###-----
 
-                        dg ----------###---
-                        dg ---------##-#---
-                        dg --------#####---
-                        dg --------#-##----
-                        dg -------#####----
-                        dg -------#####----
-                        dg ---------##-----
-                        dg --------####----
-                        dg -------######---
-                        dg -------###-##---
-                        dg -------###-##---
-                        dg -------##-###---
-                        dg --------####----
-                        dg ---------##-----
-                        dg ---------##-----
-                        dg --------###-----
+                        DG ----------###---
+                        DG ---------##-#---
+                        DG --------#####---
+                        DG --------#-##----
+                        DG -------#####----
+                        DG -------#####----
+                        DG ---------##-----
+                        DG --------####----
+                        DG -------######---
+                        DG -------###-##---
+                        DG -------###-##---
+                        DG -------##-###---
+                        DG --------####----
+                        DG ---------##-----
+                        DG ---------##-----
+                        DG --------###-----
 
-                        dg ------------###-
-                        dg -----------##-#-
-                        dg ----------#####-
-                        dg ----------#-##--
-                        dg ---------#####--
-                        dg ---------#####--
-                        dg -----------##---
-                        dg ----------####--
-                        dg ---------######-
-                        dg ---------######-
-                        dg --------###-####
-                        dg --------##-#####
-                        dg ----------####--
-                        dg ---------##-###-
-                        dg ---------###-##-
-                        dg --------###-###-
+                        DG ------------###-
+                        DG -----------##-#-
+                        DG ----------#####-
+                        DG ----------#-##--
+                        DG ---------#####--
+                        DG ---------#####--
+                        DG -----------##---
+                        DG ----------####--
+                        DG ---------######-
+                        DG ---------######-
+                        DG --------###-####
+                        DG --------##-#####
+                        DG ----------####--
+                        DG ---------##-###-
+                        DG ---------###-##-
+                        DG --------###-###-
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -7504,91 +7494,91 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
 
 ; Background
                         db $00
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
 
 ; Floor
                         db $41
-                        dg ########
-                        dg ########
-                        dg ##-##-##
-                        dg -##-###-
-                        dg ##---#-#
-                        dg -#------
-                        dg --------
-                        dg --------
+                        DG ########
+                        DG ########
+                        DG ##-##-##
+                        DG -##-###-
+                        DG ##---#-#
+                        DG -#------
+                        DG --------
+                        DG --------
 
 ; Crumbling floor
                         db $01
-                        dg ########
-                        dg ##-##-##
-                        dg #-#--#-#
-                        dg --#--#--
-                        dg -#-#--#-
-                        dg --#-----
-                        dg ----#---
-                        dg --------
+                        DG ########
+                        DG ##-##-##
+                        DG #-#--#-#
+                        DG --#--#--
+                        DG -#-#--#-
+                        DG --#-----
+                        DG ----#---
+                        DG --------
 
 ; Wall
                         db $0E
-                        dg #-#-#-#-
-                        dg -#-#-#-#
-                        dg #-#-#-#-
-                        dg -#-#-#-#
-                        dg #-#-#-#-
-                        dg -#-#-#-#
-                        dg #-#-#-#-
-                        dg -#-#-#-#
+                        DG #-#-#-#-
+                        DG -#-#-#-#
+                        DG #-#-#-#-
+                        DG -#-#-#-#
+                        DG #-#-#-#-
+                        DG -#-#-#-#
+                        DG #-#-#-#-
+                        DG -#-#-#-#
 
 ; Conveyor
                         db $06
-                        dg #######-
-                        dg -##--##-
-                        dg #######-
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
+                        DG #######-
+                        DG -##--##-
+                        DG #######-
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
 
 ; Nasty 1
                         db $46
-                        dg ---#----
-                        dg ---#----
-                        dg ##-#-##-
-                        dg --###---
-                        dg ##-#-##-
-                        dg --###---
-                        dg -#-#-#--
-                        dg #--#--#-
+                        DG ---#----
+                        DG ---#----
+                        DG ##-#-##-
+                        DG --###---
+                        DG ##-#-##-
+                        DG --###---
+                        DG -#-#-#--
+                        DG #--#--#-
 
 ; Nasty 2
                         db $42
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
-                        dg ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
+                        DG ---#----
 
 ; Extra
                         db $45
-                        dg ########
-                        dg ########
-                        dg ########
-                        dg ########
-                        dg #-#-#-#-
-                        dg --------
-                        dg --------
-                        dg --------
+                        DG ########
+                        DG ########
+                        DG ########
+                        DG ########
+                        DG #-#-#-#-
+                        DG --------
+                        DG --------
+                        DG --------
 
 ; Pixel y-coordinate * 2.
                         db $10
@@ -7653,36 +7643,36 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
 ; Portal
 
                         db $56
-                        dg ################
-                        dg ##-##-#-#-#-#-##
-                        dg ###-#-#--##-#-##
-                        dg ################
-                        dg #--#--------#--#
-                        dg #--#--------#--#
-                        dg ################
-                        dg #--#--------#--#
-                        dg #--#--------#--#
-                        dg ################
-                        dg #--#--------#--#
-                        dg #--#--------#--#
-                        dg ################
-                        dg #--#--------#--#
-                        dg #--#--------#--#
-                        dg ################
+                        DG ################
+                        DG ##-##-#-#-#-#-##
+                        DG ###-#-#--##-#-##
+                        DG ################
+                        DG #--#--------#--#
+                        DG #--#--------#--#
+                        DG ################
+                        DG #--#--------#--#
+                        DG #--#--------#--#
+                        DG ################
+                        DG #--#--------#--#
+                        DG #--#--------#--#
+                        DG ################
+                        DG #--#--------#--#
+                        DG #--#--------#--#
+                        DG ################
 
 ; Location
                         dw $5C21,$6021
 
 ; Item graphic
 
-                        dg --####--
-                        dg -#-##-#-
-                        dg #--#-#-#
-                        dg ##-#-#-#
-                        dg ##-#-#-#
-                        dg ##-#-#-#
-                        dg -#-##-#-
-                        dg --####--
+                        DG --####--
+                        DG -#-##-#-
+                        DG #--#-#-#
+                        DG ##-#-#-#
+                        DG ##-#-#-#
+                        DG ##-#-#-#
+                        DG -#-##-#-
+                        DG --####--
 
 ; Air supply
                         db $3F
@@ -7739,141 +7729,141 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         db $00,$00,$00,$00,$00,$00
 
 
-                        dg ----------------
-                        dg ----------------
-                        dg --############--
-                        dg -##---####---##-
-                        dg ###-#-####-#-###
-                        dg ###-#------#-###
-                        dg ----########----
-                        dg -----######-----
-                        dg ----##----##----
-                        dg ----#-####-#----
-                        dg ---##-####-##---
-                        dg ---###----###---
-                        dg --############--
-                        dg --############--
-                        dg --############--
-                        dg --############--
+                        DG ----------------
+                        DG ----------------
+                        DG --############--
+                        DG -##---####---##-
+                        DG ###-#-####-#-###
+                        DG ###-#------#-###
+                        DG ----########----
+                        DG -----######-----
+                        DG ----##----##----
+                        DG ----#-####-#----
+                        DG ---##-####-##---
+                        DG ---###----###---
+                        DG --############--
+                        DG --############--
+                        DG --############--
+                        DG --############--
 
-                        dg --####----------
-                        dg -#########------
-                        dg -############---
-                        dg -##---####---##-
-                        dg ----#----#-#-###
-                        dg ----#------#-###
-                        dg ----########-###
-                        dg -----######-----
-                        dg ----##----##----
-                        dg ----#-####-#----
-                        dg ---##-####-##---
-                        dg ---###----###---
-                        dg --############--
-                        dg --############--
-                        dg --############--
-                        dg --############--
+                        DG --####----------
+                        DG -#########------
+                        DG -############---
+                        DG -##---####---##-
+                        DG ----#----#-#-###
+                        DG ----#------#-###
+                        DG ----########-###
+                        DG -----######-----
+                        DG ----##----##----
+                        DG ----#-####-#----
+                        DG ---##-####-##---
+                        DG ---###----###---
+                        DG --############--
+                        DG --############--
+                        DG --############--
+                        DG --############--
 
-                        dg ----------------
-                        dg ----------------
-                        dg --############--
-                        dg -##---####---##-
-                        dg ###-#-####-#-###
-                        dg ###-#------#-###
-                        dg ----########----
-                        dg -----######-----
-                        dg ----##----##----
-                        dg ----#-####-#----
-                        dg ---##-####-##---
-                        dg ---###----###---
-                        dg --############--
-                        dg --############--
-                        dg --############--
-                        dg --############--
+                        DG ----------------
+                        DG ----------------
+                        DG --############--
+                        DG -##---####---##-
+                        DG ###-#-####-#-###
+                        DG ###-#------#-###
+                        DG ----########----
+                        DG -----######-----
+                        DG ----##----##----
+                        DG ----#-####-#----
+                        DG ---##-####-##---
+                        DG ---###----###---
+                        DG --############--
+                        DG --############--
+                        DG --############--
+                        DG --############--
 
-                        dg ----------####--
-                        dg ------#########-
-                        dg ---############-
-                        dg -##---####---##-
-                        dg ###-#-#----#----
-                        dg ###-#------#----
-                        dg ###-########----
-                        dg -----######-----
-                        dg ----##----##----
-                        dg ----#-####-#----
-                        dg ---##-####-##---
-                        dg ---###----###---
-                        dg --############--
-                        dg --############--
-                        dg --############--
-                        dg --############--
+                        DG ----------####--
+                        DG ------#########-
+                        DG ---############-
+                        DG -##---####---##-
+                        DG ###-#-#----#----
+                        DG ###-#------#----
+                        DG ###-########----
+                        DG -----######-----
+                        DG ----##----##----
+                        DG ----#-####-#----
+                        DG ---##-####-##---
+                        DG ---###----###---
+                        DG --############--
+                        DG --############--
+                        DG --############--
+                        DG --############--
 
-                        dg ----##----------
-                        dg ---#-##---------
-                        dg --#-##-#--------
-                        dg -#--##--#-------
-                        dg #---##---#------
-                        dg #---##---#------
-                        dg -#--##--#-------
-                        dg --#-##-#--------
-                        dg ---#-##---------
-                        dg ----##----------
-                        dg --##-###--------
-                        dg -#--##----------
-                        dg -#########------
-                        dg ##########------
-                        dg -#------#-------
-                        dg --#-###---------
+                        DG ----##----------
+                        DG ---#-##---------
+                        DG --#-##-#--------
+                        DG -#--##--#-------
+                        DG #---##---#------
+                        DG #---##---#------
+                        DG -#--##--#-------
+                        DG --#-##-#--------
+                        DG ---#-##---------
+                        DG ----##----------
+                        DG --##-###--------
+                        DG -#--##----------
+                        DG -#########------
+                        DG ##########------
+                        DG -#------#-------
+                        DG --#-###---------
 
-                        dg ------##--------
-                        dg ------##--------
-                        dg -----#-##-------
-                        dg -----####-------
-                        dg ----#-##-#------
-                        dg ----#-##-#------
-                        dg -----####-------
-                        dg -----#-##-------
-                        dg ------##--------
-                        dg ------##--------
-                        dg ----###-##------
-                        dg ------##--#-----
-                        dg --#########-----
-                        dg --##########----
-                        dg ---#------#-----
-                        dg -----###-#------
+                        DG ------##--------
+                        DG ------##--------
+                        DG -----#-##-------
+                        DG -----####-------
+                        DG ----#-##-#------
+                        DG ----#-##-#------
+                        DG -----####-------
+                        DG -----#-##-------
+                        DG ------##--------
+                        DG ------##--------
+                        DG ----###-##------
+                        DG ------##--#-----
+                        DG --#########-----
+                        DG --##########----
+                        DG ---#------#-----
+                        DG -----###-#------
 
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------#-------
-                        dg --------#-------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg --------##------
-                        dg -------###-#----
-                        dg -----#--##--#---
-                        dg ----##########--
-                        dg ----#########---
-                        dg ------------#---
-                        dg ------###-##----
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------#-------
+                        DG --------#-------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG --------##------
+                        DG -------###-#----
+                        DG -----#--##--#---
+                        DG ----##########--
+                        DG ----#########---
+                        DG ------------#---
+                        DG ------###-##----
 
-                        dg ----------##----
-                        dg ---------##-#---
-                        dg --------#-##-#--
-                        dg --------#-##-#--
-                        dg -------#--##--#-
-                        dg -------#--##--#-
-                        dg --------#-##-#--
-                        dg --------#-##-#--
-                        dg ---------##-#---
-                        dg ----------##----
-                        dg --------#-###---
-                        dg -------#--##--#-
-                        dg ------##########
-                        dg -------#########
-                        dg -------#--------
-                        dg --------##-###--
+                        DG ----------##----
+                        DG ---------##-#---
+                        DG --------#-##-#--
+                        DG --------#-##-#--
+                        DG -------#--##--#-
+                        DG -------#--##--#-
+                        DG --------#-##-#--
+                        DG --------#-##-#--
+                        DG ---------##-#---
+                        DG ----------##----
+                        DG --------#-###---
+                        DG -------#--##--#-
+                        DG ------##########
+                        DG -------#########
+                        DG -------#--------
+                        DG --------##-###--
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -7910,36 +7900,36 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
 
 ; Background
                         db $00
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
-                        dg --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
+                        DG --------
 
 ; Floor
                         db $43
-                        dg ########
-                        dg ########
-                        dg ##-##-##
-                        dg -##-###-
-                        dg ##---#-#
-                        dg -#------
-                        dg --------
-                        dg --------
+                        DG ########
+                        DG ########
+                        DG ##-##-##
+                        DG -##-###-
+                        DG ##---#-#
+                        DG -#------
+                        DG --------
+                        DG --------
 
 ; Crumbling floor
                         db $03
-                        dg ########
-                        dg ##-##-##
-                        dg #-#--#-#
-                        dg --#--#--
-                        dg -#-#--#-
-                        dg --#-----
-                        dg ----#---
-                        dg --------
+                        DG ########
+                        DG ##-##-##
+                        DG #-#--#-#
+                        DG --#--#--
+                        DG -#-#--#-
+                        DG --#-----
+                        DG ----#---
+                        DG --------
 
 ; Wall
                         db $65
@@ -8059,36 +8049,36 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
 ; Portal
 
                         db $5E
-                        dg ################
-                        dg #--------------#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---##----##---#
-                        dg #---##----##---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #---########---#
-                        dg #--------------#
-                        dg ################
+                        DG ################
+                        DG #--------------#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---##----##---#
+                        DG #---##----##---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #---########---#
+                        DG #--------------#
+                        DG ################
 
 ; Location
                         dw $5DAF,$68AF
 
 ; Item graphic
 
-                        dg #-------
-                        dg ##------
-                        dg ###-##--
-                        dg -###--#-
-                        dg --#-#---
-                        dg -#-#-#--
-                        dg #---#-#-
-                        dg #----###
+                        DG #-------
+                        DG ##------
+                        DG ###-##--
+                        DG -###--#-
+                        DG --#-#---
+                        DG -#-#-#--
+                        DG #---#-#-
+                        DG #----###
 
 ; Air supply
                         db $3F
@@ -8145,141 +8135,141 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         db $00,$00,$00,$00,$00,$00
 
 
-                        dg ---#--####--#---
-                        dg ---###-##-###---
-                        dg ----########----
-                        dg -----##--##-----
-                        dg -----#-##-#-----
-                        dg ------#--#------
-                        dg -----######-----
-                        dg ----########----
-                        dg ---##########---
-                        dg --##--####--##--
-                        dg -##---####---##-
-                        dg -#---##--##---#-
-                        dg --#-##----##-#--
-                        dg -----##--##-----
-                        dg ------#--#------
-                        dg ----###--###----
+                        DG ---#--####--#---
+                        DG ---###-##-###---
+                        DG ----########----
+                        DG -----##--##-----
+                        DG -----#-##-#-----
+                        DG ------#--#------
+                        DG -----######-----
+                        DG ----########----
+                        DG ---##########---
+                        DG --##--####--##--
+                        DG -##---####---##-
+                        DG -#---##--##---#-
+                        DG --#-##----##-#--
+                        DG -----##--##-----
+                        DG ------#--#------
+                        DG ----###--###----
 
-                        dg ----#-####-#----
-                        dg ----##-##-##----
-                        dg ----########----
-                        dg -----##--##-----
-                        dg -----#-##-#-----
-                        dg ------#--#------
-                        dg ------####------
-                        dg ---##########---
-                        dg -##############-
-                        dg ###--######--###
-                        dg #-----####-----#
-                        dg ##---######---##
-                        dg -----##--##-----
-                        dg ----##----##----
-                        dg ----#------#----
-                        dg --###------###--
+                        DG ----#-####-#----
+                        DG ----##-##-##----
+                        DG ----########----
+                        DG -----##--##-----
+                        DG -----#-##-#-----
+                        DG ------#--#------
+                        DG ------####------
+                        DG ---##########---
+                        DG -##############-
+                        DG ###--######--###
+                        DG #-----####-----#
+                        DG ##---######---##
+                        DG -----##--##-----
+                        DG ----##----##----
+                        DG ----#------#----
+                        DG --###------###--
 
-                        dg ---###----###---
-                        dg -----##--##-----
-                        dg ----##----##----
-                        dg -##--##--##--##-
-                        dg --#---####---#--
-                        dg -##--######--##-
-                        dg --##-######-##--
-                        dg ---##########---
-                        dg ----########----
-                        dg -----######-----
-                        dg ------#--#------
-                        dg -----#-##-#-----
-                        dg -----##--##-----
-                        dg ----########----
-                        dg ----##-##-##----
-                        dg ----#-####-#----
+                        DG ---###----###---
+                        DG -----##--##-----
+                        DG ----##----##----
+                        DG -##--##--##--##-
+                        DG --#---####---#--
+                        DG -##--######--##-
+                        DG --##-######-##--
+                        DG ---##########---
+                        DG ----########----
+                        DG -----######-----
+                        DG ------#--#------
+                        DG -----#-##-#-----
+                        DG -----##--##-----
+                        DG ----########----
+                        DG ----##-##-##----
+                        DG ----#-####-#----
 
-                        dg -###--------###-
-                        dg ---##------##---
-                        dg ----##----##----
-                        dg -----##--##-----
-                        dg -##---####---##-
-                        dg --#--######--#--
-                        dg -##--######--##-
-                        dg --##-######-##--
-                        dg ---##########---
-                        dg ----########----
-                        dg ------#--#------
-                        dg -----#-##-#-----
-                        dg ---#-##--##-#---
-                        dg ----########----
-                        dg ----##-##-##----
-                        dg ------####------
+                        DG -###--------###-
+                        DG ---##------##---
+                        DG ----##----##----
+                        DG -----##--##-----
+                        DG -##---####---##-
+                        DG --#--######--#--
+                        DG -##--######--##-
+                        DG --##-######-##--
+                        DG ---##########---
+                        DG ----########----
+                        DG ------#--#------
+                        DG -----#-##-#-----
+                        DG ---#-##--##-#---
+                        DG ----########----
+                        DG ----##-##-##----
+                        DG ------####------
 
-                        dg ----#-----------
-                        dg -----#-#--------
-                        dg ----#---#-------
-                        dg --#--#-#--------
-                        dg -#--#---#-------
-                        dg --#----#--------
-                        dg -#--##----------
-                        dg --##--##--------
-                        dg -#---#--#-------
-                        dg -#---#--#-------
-                        dg #---#----#------
-                        dg #----#---#------
-                        dg -#--#---#-------
-                        dg -#--#---#-------
-                        dg --##--##--------
-                        dg ----##----------
+                        DG ----#-----------
+                        DG -----#-#--------
+                        DG ----#---#-------
+                        DG --#--#-#--------
+                        DG -#--#---#-------
+                        DG --#----#--------
+                        DG -#--##----------
+                        DG --##--##--------
+                        DG -#---#--#-------
+                        DG -#---#--#-------
+                        DG #---#----#------
+                        DG #----#---#------
+                        DG -#--#---#-------
+                        DG -#--#---#-------
+                        DG --##--##--------
+                        DG ----##----------
 
-                        dg ------#---------
-                        dg ---#---#--#-----
-                        dg ----#-#--#------
-                        dg ---#---#--#-----
-                        dg ----#-#--#------
-                        dg ---#------#-----
-                        dg ------##--------
-                        dg ----##--##------
-                        dg ---#------#-----
-                        dg ---#-----##-----
-                        dg --#---#-#--#----
-                        dg --#--#-#---#----
-                        dg ---##-----#-----
-                        dg ---#------#-----
-                        dg ----##--##------
-                        dg ------##--------
+                        DG ------#---------
+                        DG ---#---#--#-----
+                        DG ----#-#--#------
+                        DG ---#---#--#-----
+                        DG ----#-#--#------
+                        DG ---#------#-----
+                        DG ------##--------
+                        DG ----##--##------
+                        DG ---#------#-----
+                        DG ---#-----##-----
+                        DG --#---#-#--#----
+                        DG --#--#-#---#----
+                        DG ---##-----#-----
+                        DG ---#------#-----
+                        DG ----##--##------
+                        DG ------##--------
 
-                        dg ---------#------
-                        dg ------#---#-----
-                        dg -----#---#--#---
-                        dg ------#---#--#--
-                        dg -----#---#--#---
-                        dg ------#------#--
-                        dg --------##--#---
-                        dg ------##--##----
-                        dg -----#------#---
-                        dg -----#------#---
-                        dg ----#-##-#---#--
-                        dg ----#---#-##-#--
-                        dg -----#------#---
-                        dg -----#------#---
-                        dg ------##--##----
-                        dg --------##------
+                        DG ---------#------
+                        DG ------#---#-----
+                        DG -----#---#--#---
+                        DG ------#---#--#--
+                        DG -----#---#--#---
+                        DG ------#------#--
+                        DG --------##--#---
+                        DG ------##--##----
+                        DG -----#------#---
+                        DG -----#------#---
+                        DG ----#-##-#---#--
+                        DG ----#---#-##-#--
+                        DG -----#------#---
+                        DG -----#------#---
+                        DG ------##--##----
+                        DG --------##------
 
-                        dg ---------#---#--
-                        dg -------#--#---#-
-                        dg ------#--#---#--
-                        dg -------#--#---#-
-                        dg ------#--#---#--
-                        dg -------#------#-
-                        dg ------#---##----
-                        dg --------##--##--
-                        dg -------#-#----#-
-                        dg -------#--#---#-
-                        dg ------#----#---#
-                        dg ------#---#----#
-                        dg -------#---#--#-
-                        dg -------#----#-#-
-                        dg --------##--##--
-                        dg ----------##----
+                        DG ---------#---#--
+                        DG -------#--#---#-
+                        DG ------#--#---#--
+                        DG -------#--#---#-
+                        DG ------#--#---#--
+                        DG -------#------#-
+                        DG ------#---##----
+                        DG --------##--##--
+                        DG -------#-#----#-
+                        DG -------#--#---#-
+                        DG ------#----#---#
+                        DG ------#---#----#
+                        DG -------#---#--#-
+                        DG -------#----#-#-
+                        DG --------##--##--
+                        DG ----------##----
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
 
@@ -9492,8 +9482,8 @@ MinerWillyMeetsTheKongBeastData   DH "720005000000060000000500000000000072060072
                         dg ----------------
                         dg ----------------
 
-;------------------------------------------------------------------------------------------------------------------------------------------;                        
-                        
+;------------------------------------------------------------------------------------------------------------------------------------------;
+
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; The Sixteenth Cavern (teleport: 12346)                         ;
@@ -9897,7 +9887,7 @@ TheSixteenthCavernData            DH "650000000000000000000000000000000000000000
                         dg ------#--#--#---
 
 ;------------------------------------------------------------------------------------------------------------------------------------------;
-                        
+
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; The Warehouse (teleport: 56)                                   ;
@@ -9926,8 +9916,8 @@ TheWarehouseData                  DH "160000000000000000000000000000000000000000
 ; The next 32 bytes specify the cavern name.
 
                                   DB "         The Warehouse          "    ; Cavern name
-                                  
-; The next 72 bytes contain the attributes and graphic data for the tiles used to build the cavern.                                  
+
+; The next 72 bytes contain the attributes and graphic data for the tiles used to build the cavern.
 
 ; Background
                         db $00
@@ -10302,8 +10292,8 @@ TheWarehouseData                  DH "160000000000000000000000000000000000000000
                         dg ----##--------##
                         dg --------------##
 
-;------------------------------------------------------------------------------------------------------------------------------------------;                        
-                        
+;------------------------------------------------------------------------------------------------------------------------------------------;
+
 ;----------------------------------------------------------------;
 ;                                                                ;
 ; Amoebatrons' Revenge (teleport: 156)                           ;
@@ -10330,7 +10320,7 @@ AmoebatronsRevengeData            DH "160000000000000000000000000000000000000000
                                   DH "4242424242424242424242424242424242424242424242424242424242424242"
 
 ; The next 32 bytes specify the cavern name.
-                                  
+
                                   DB "      Amoebatrons' Revenge      "    ; Cavern name.
 
 ; Background
@@ -11137,114 +11127,114 @@ TheFinalBarrierData               DH "2C22222222222C28282828282F2F2F2F2F28282828
 
 ; Background
                                   db $00
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
 
 ; Floor
                                   db $42
-                                  dg ########
-                                  dg ########
-                                  dg ##-##-##
-                                  dg -##-###-
-                                  dg ##---#-#
-                                  dg -#------
-                                  dg --------
-                                  dg --------
+                                  DG ########
+                                  DG ########
+                                  DG ##-##-##
+                                  DG -##-###-
+                                  DG ##---#-#
+                                  DG -#------
+                                  DG --------
+                                  DG --------
 
 ; Crumbling floor
                                   db $02
-                                  dg ########
-                                  dg ##-##-##
-                                  dg #-#--#-#
-                                  dg --#--#--
-                                  dg -#-#--#-
-                                  dg --#-----
-                                  dg ----#---
-                                  dg --------
+                                  DG ########
+                                  DG ##-##-##
+                                  DG #-#--#-#
+                                  DG --#--#--
+                                  DG -#-#--#-
+                                  DG --#-----
+                                  DG ----#---
+                                  DG --------
 
 ; Wall
                                   db $26
-                                  dg --#---#-
-                                  dg ########
-                                  dg #---#---
-                                  dg ########
-                                  dg --#---#-
-                                  dg ########
-                                  dg #---#---
-                                  dg ########
+                                  DG --#---#-
+                                  DG ########
+                                  DG #---#---
+                                  DG ########
+                                  DG --#---#-
+                                  DG ########
+                                  DG #---#---
+                                  DG ########
 
 ; Conveyor
                                   db $05
-                                  dg ####----
-                                  dg -##--##-
-                                  dg ####----
-                                  dg -##--##-
-                                  dg --------
-                                  dg #--##--#
-                                  dg ########
-                                  dg --------
+                                  DG ####----
+                                  DG -##--##-
+                                  DG ####----
+                                  DG -##--##-
+                                  DG --------
+                                  DG #--##--#
+                                  DG ########
+                                  DG --------
 
 ; Nasty 1
                                   db $44
-                                  dg ---#----
-                                  dg ---#----
-                                  dg ##-#-##-
-                                  dg --###---
-                                  dg ##-#-##-
-                                  dg --###---
-                                  dg -#-#-#--
-                                  dg #--#--#-
+                                  DG ---#----
+                                  DG ---#----
+                                  DG ##-#-##-
+                                  DG --###---
+                                  DG ##-#-##-
+                                  DG --###---
+                                  DG -#-#-#--
+                                  DG #--#--#-
 
 ; Nasty 2
                                   db $0A
-                                  dg -######-
-                                  dg --####--
-                                  dg ---###--
-                                  dg ---##---
-                                  dg ---##---
-                                  dg ----#---
-                                  dg ----#---
-                                  dg ----#---
+                                  DG -######-
+                                  DG --####--
+                                  DG ---###--
+                                  DG ---##---
+                                  DG ---##---
+                                  DG ----#---
+                                  DG ----#---
+                                  DG ----#---
 
 ; Extra
                                   db $00
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
-                                  dg --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
+                                  DG --------
 
 ; Pixel y-coordinate * 2.
-                        db $D0
+                                  db $D0
 
 ; Animation frame.
-                        db $00
+                                  db $00
 
 ; Direction and movement flags
-                        db $01
+                                  db $01
 
 ; Airborne status indicator.
-                        db $00
+                                  db $00
 
 ; Location in the attribute buffer at 23970
-                        dw $5DBB
+                                  dw $5DBB
 
 ; Jumping animation counter
-                        db $00
+                                  db $00
 
 ; Conveyor
 
 ; Direction
-                        db $01
+                                  db $01
 
 ; Location in the screen buffer
                                   dw $7841
@@ -11286,36 +11276,36 @@ TheFinalBarrierData               DH "2C22222222222C28282828282F2F2F2F2F28282828
 ; Portal
 
                                   db $1E
-                                  dg ----------------
-                                  dg -----######-----
-                                  dg ---##------##---
-                                  dg --#---####---#--
-                                  dg -#---#----#---#-
-                                  dg -#--#------#--#-
-                                  dg -#--#------#--#-
-                                  dg -#--#------#--#-
-                                  dg -#---#----#---#-
-                                  dg --#---#--#---#--
-                                  dg ---##-#--#-##---
-                                  dg -#--#-#--#-#--#-
-                                  dg -####-#--#-####-
-                                  dg -#----#--#----#-
-                                  dg -######--######-
-                                  dg ----------------
+                                  DG ----------------
+                                  DG -----######-----
+                                  DG ---##------##---
+                                  DG --#---####---#--
+                                  DG -#---#----#---#-
+                                  DG -#--#------#--#-
+                                  DG -#--#------#--#-
+                                  DG -#--#------#--#-
+                                  DG -#---#----#---#-
+                                  DG --#---#--#---#--
+                                  DG ---##-#--#-##---
+                                  DG -#--#-#--#-#--#-
+                                  DG -####-#--#-####-
+                                  DG -#----#--#----#-
+                                  DG -######--######-
+                                  DG ----------------
 
 ; Location
                                   dw $5CB3,$60B3
 
 ; Item graphic
 
-                                  dg --##----
-                                  dg -#--#---
-                                  dg #---#---
-                                  dg #--#----
-                                  dg -##-#---
-                                  dg -----#--
-                                  dg ----#-#-
-                                  dg -----#--
+                                  DG --##----
+                                  DG -#--#---
+                                  DG #---#---
+                                  DG #--#----
+                                  DG -##-#---
+                                  DG -----#--
+                                  DG ----#-#-
+                                  DG -----#--
 
 ; Air supply
                                   db $3F
@@ -11372,141 +11362,141 @@ TheFinalBarrierData               DH "2C22222222222C28282828282F2F2F2F2F28282828
                                   db $00,$00,$00,$00,$00,$00
 
 
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ------####------
-                                  dg ----##----##----
-                                  dg ---#--------#---
-                                  dg --#----------#--
-                                  dg -#------------#-
-                                  dg #--------------#
-                                  dg -#------------#-
-                                  dg --#----------#--
-                                  dg ##-#--------#-##
-                                  dg --#-##----##-#--
-                                  dg -#--#-####-#--#-
-                                  dg ---#--#--#--#---
-                                  dg ------#--#------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ------####------
+                                  DG ----##----##----
+                                  DG ---#--------#---
+                                  DG --#----------#--
+                                  DG -#------------#-
+                                  DG #--------------#
+                                  DG -#------------#-
+                                  DG --#----------#--
+                                  DG ##-#--------#-##
+                                  DG --#-##----##-#--
+                                  DG -#--#-####-#--#-
+                                  DG ---#--#--#--#---
+                                  DG ------#--#------
 
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ------####------
-                                  dg ----##----##----
-                                  dg ---#--------#---
-                                  dg --#----------#--
-                                  dg -#------------#-
-                                  dg #####------#####
-                                  dg -#-#-######-#-#-
-                                  dg --#-#-####-#-#--
-                                  dg ---#--#--#--#---
-                                  dg ----##----##----
-                                  dg ------####------
-                                  dg ----------------
-                                  dg ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ------####------
+                                  DG ----##----##----
+                                  DG ---#--------#---
+                                  DG --#----------#--
+                                  DG -#------------#-
+                                  DG #####------#####
+                                  DG -#-#-######-#-#-
+                                  DG --#-#-####-#-#--
+                                  DG ---#--#--#--#---
+                                  DG ----##----##----
+                                  DG ------####------
+                                  DG ----------------
+                                  DG ----------------
 
-                                  dg -----#----#-----
-                                  dg -----#----#-----
-                                  dg ---#--#--#--#---
-                                  dg -#--#-####-#--#-
-                                  dg --#-##----##-#--
-                                  dg #--#--####--#--#
-                                  dg #-#--######--#-#
-                                  dg -#---##--##---#-
-                                  dg #----##--##----#
-                                  dg -#---######---#-
-                                  dg --#---####---#--
-                                  dg ---#--------#---
-                                  dg ----##----##----
-                                  dg ------####------
-                                  dg ----------------
-                                  dg ----------------
+                                  DG -----#----#-----
+                                  DG -----#----#-----
+                                  DG ---#--#--#--#---
+                                  DG -#--#-####-#--#-
+                                  DG --#-##----##-#--
+                                  DG #--#--####--#--#
+                                  DG #-#--######--#-#
+                                  DG -#---##--##---#-
+                                  DG #----##--##----#
+                                  DG -#---######---#-
+                                  DG --#---####---#--
+                                  DG ---#--------#---
+                                  DG ----##----##----
+                                  DG ------####------
+                                  DG ----------------
+                                  DG ----------------
 
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ----------------
-                                  dg ------####------
-                                  dg ----##----##----
-                                  dg ---#--#--#--#---
-                                  dg --#-#-#--#-#-#--
-                                  dg -#-##########-#-
-                                  dg ####-##--#######
-                                  dg -#---######---#-
-                                  dg --#---####---#--
-                                  dg ---#--------#---
-                                  dg ----##----##----
-                                  dg ------####------
-                                  dg ----------------
-                                  dg ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ----------------
+                                  DG ------####------
+                                  DG ----##----##----
+                                  DG ---#--#--#--#---
+                                  DG --#-#-#--#-#-#--
+                                  DG -#-##########-#-
+                                  DG ####-##--#######
+                                  DG -#---######---#-
+                                  DG --#---####---#--
+                                  DG ---#--------#---
+                                  DG ----##----##----
+                                  DG ------####------
+                                  DG ----------------
+                                  DG ----------------
 
-                                  dg ---#--#---------
-                                  dg ----##----------
-                                  dg ---####---------
-                                  dg #-######-#------
-                                  dg -###--###-------
-                                  dg -###--###-------
-                                  dg #-######-#------
-                                  dg -#-####-#-------
-                                  dg -#--##--#-------
-                                  dg -#-#--#-#-------
-                                  dg -########-------
-                                  dg ----##----------
-                                  dg -##----##-------
-                                  dg #--#--#-##------
-                                  dg #-##--#--#------
-                                  dg -##----##-------
+                                  DG ---#--#---------
+                                  DG ----##----------
+                                  DG ---####---------
+                                  DG #-######-#------
+                                  DG -###--###-------
+                                  DG -###--###-------
+                                  DG #-######-#------
+                                  DG -#-####-#-------
+                                  DG -#--##--#-------
+                                  DG -#-#--#-#-------
+                                  DG -########-------
+                                  DG ----##----------
+                                  DG -##----##-------
+                                  DG #--#--#-##------
+                                  DG #-##--#--#------
+                                  DG -##----##-------
 
-                                  dg ------##--------
-                                  dg -----####-------
-                                  dg -----####-------
-                                  dg ---###--###-----
-                                  dg --###-##-###----
-                                  dg --###-##-###----
-                                  dg ---###--###-----
-                                  dg ---#-####-#-----
-                                  dg ---#-####-#-----
-                                  dg ---#--##--#-----
-                                  dg ---########-----
-                                  dg ------##--------
-                                  dg ---##----##-----
-                                  dg --#--#--#--#----
-                                  dg --##-#--#-##----
-                                  dg ---##----##-----
+                                  DG ------##--------
+                                  DG -----####-------
+                                  DG -----####-------
+                                  DG ---###--###-----
+                                  DG --###-##-###----
+                                  DG --###-##-###----
+                                  DG ---###--###-----
+                                  DG ---#-####-#-----
+                                  DG ---#-####-#-----
+                                  DG ---#--##--#-----
+                                  DG ---########-----
+                                  DG ------##--------
+                                  DG ---##----##-----
+                                  DG --#--#--#--#----
+                                  DG --##-#--#-##----
+                                  DG ---##----##-----
 
-                                  dg -------####-----
-                                  dg -------####-----
-                                  dg -------#--#-----
-                                  dg ----###-##-###--
-                                  dg ----##-####-##--
-                                  dg ----##-####-##--
-                                  dg ----###-##-###--
-                                  dg -----#-#--#-#---
-                                  dg -----#-####-#---
-                                  dg -----#-####-#---
-                                  dg -----########---
-                                  dg --------##------
-                                  dg -----##----##---
-                                  dg ----##-#--#--#--
-                                  dg ----#--#--##-#--
-                                  dg -----##----##---
+                                  DG -------####-----
+                                  DG -------####-----
+                                  DG -------#--#-----
+                                  DG ----###-##-###--
+                                  DG ----##-####-##--
+                                  DG ----##-####-##--
+                                  DG ----###-##-###--
+                                  DG -----#-#--#-#---
+                                  DG -----#-####-#---
+                                  DG -----#-####-#---
+                                  DG -----########---
+                                  DG --------##------
+                                  DG -----##----##---
+                                  DG ----##-#--#--#--
+                                  DG ----#--#--##-#--
+                                  DG -----##----##---
 
-                                  dg ---------####---
-                                  dg ---------#--#---
-                                  dg ----------##----
-                                  dg ------##-####-##
-                                  dg ------#-######-#
-                                  dg ------#-######-#
-                                  dg ------##-####-##
-                                  dg -------#--##--#-
-                                  dg -------#-#--#-#-
-                                  dg -------#-####-#-
-                                  dg -------########-
-                                  dg ----------##----
-                                  dg -------##----##-
-                                  dg ------#-##--##-#
-                                  dg ------#--#--#--#
-                                  dg -------##----##-
+                                  DG ---------####---
+                                  DG ---------#--#---
+                                  DG ----------##----
+                                  DG ------##-####-##
+                                  DG ------#-######-#
+                                  DG ------#-######-#
+                                  DG ------##-####-##
+                                  DG -------#--##--#-
+                                  DG -------#-#--#-#-
+                                  DG -------#-####-#-
+                                  DG -------########-
+                                  DG ----------##----
+                                  DG -------##----##-
+                                  DG ------#-##--##-#
+                                  DG ------#--#--#--#
+                                  DG -------##----##-
 
 
 ; Stop planting code after this. (When generating a tape file we save bytes below here).
